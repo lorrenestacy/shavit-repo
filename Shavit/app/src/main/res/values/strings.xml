@@ -24,4 +24,8 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="fragmentAgendamentosText">Fragmento de Agendamentos</string>
+    <string name="fragmentPedidosText">Fragmento de Pedidos</string>
+    <string name="fragmentServicosText">Fragmento de Serviços</string>
+    <string name="fragmentPerfilText">Fragmento de Perfil</string>
 </resources>

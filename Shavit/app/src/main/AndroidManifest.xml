@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
+            android:name=".views.activities.LoginActivity"
             android:label="Shavit Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,12 +24,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomeAgendamentoClienteActivity"
+            android:name=".views.activities.HomeAgendamentoClienteActivity"
             android:label="Shavit Home" />
         <activity
-            android:name=".CadastroActivity"
+            android:name=".views.activities.CadastroActivity"
             android:label="Shavit Cadastro" />
-        <activity android:name=".PedidoClienteActivity"></activity>
+        <activity android:name=".views.activities.PedidoClienteActivity"></activity>
     </application>
 
 </manifest>
