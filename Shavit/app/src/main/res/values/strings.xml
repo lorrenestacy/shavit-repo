@@ -31,4 +31,6 @@
     <string name="fragmentServicosListText">Fragmento de lista de serviços</string>
     <string name="fragmentProvedoresListText">Fragment de lista de provedores</string>
     <string name="fragmentPromocoesListText">Fragment de lista de promoções</string>
+    <string name="nomeServicoDefault">Nome do Serviço</string>
+    <string name="descricaoServicoDefault">Descrição serviço default</string>
 </resources>

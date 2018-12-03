@@ -3,11 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ServicosListFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.fragments.ServicosListFragment">
 
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listServicos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/fragmentServicosListText" />
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
+
 
 </FrameLayout>
+
+

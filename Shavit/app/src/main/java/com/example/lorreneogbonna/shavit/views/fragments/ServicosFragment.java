@@ -10,10 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.lorreneogbonna.shavit.PromocoesListFragment;
-import com.example.lorreneogbonna.shavit.ProvedoresListFragment;
 import com.example.lorreneogbonna.shavit.R;
-import com.example.lorreneogbonna.shavit.ServicosListFragment;
 import com.example.lorreneogbonna.shavit.views.adapters.TabPageAdapter;
 
 public class ServicosFragment extends Fragment {

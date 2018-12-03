@@ -1,4 +1,4 @@
-package com.example.lorreneogbonna.shavit;
+package com.example.lorreneogbonna.shavit.views.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,9 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class PromocoesListFragment extends Fragment {
+import com.example.lorreneogbonna.shavit.R;
 
-    public PromocoesListFragment() {
+public class ProvedoresListFragment extends Fragment {
+
+    public ProvedoresListFragment() {
         // Required empty public constructor
     }
 
@@ -18,7 +20,7 @@ public class PromocoesListFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_promocoes_list, container, false);
+        return inflater.inflate(R.layout.fragment_provedores_list, container, false);
     }
 
 }
