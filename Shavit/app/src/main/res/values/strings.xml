@@ -28,4 +28,7 @@
     <string name="fragmentPedidosText">Fragmento de Pedidos</string>
     <string name="fragmentServicosText">Fragmento de Serviços</string>
     <string name="fragmentPerfilText">Fragmento de Perfil</string>
+    <string name="fragmentServicosListText">Fragmento de lista de serviços</string>
+    <string name="fragmentProvedoresListText">Fragment de lista de provedores</string>
+    <string name="fragmentPromocoesListText">Fragment de lista de promoções</string>
 </resources>
