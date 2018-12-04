@@ -21,13 +21,10 @@ public class HomeAgendamentoClienteActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_agendamentos:
                     mTextMessage.setText("Agendamentos");
-                    intent = new Intent(HomeAgendamentoClienteActivity.this, CadastroActivity.class);
-                    startActivity(intent);
+
                     return true;
                 case R.id.navigation_pedidos:
                     mTextMessage.setText("Pedidos");
-                    intent = new Intent(HomeAgendamentoClienteActivity.this, PedidoClienteActivity.class);
-                    startActivity(intent);
                     return true;
                 case R.id.navigation_perfil:
                     mTextMessage.setText("Perfil");
