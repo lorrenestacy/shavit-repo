@@ -24,9 +24,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomeAgendamentoClienteActivity"
-            android:label="Shavit Home" />
-        <activity
             android:name=".CadastroActivity"
             android:label="Shavit Cadastro" />
         <activity android:name=".PedidoClienteActivity"></activity>
