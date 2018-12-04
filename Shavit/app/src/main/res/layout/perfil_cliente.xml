@@ -6,7 +6,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeAgendamentoClienteActivity">
+    tools:context=".views.activities.HomeAgendamentoClienteActivity">
 
     <android.support.design.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
