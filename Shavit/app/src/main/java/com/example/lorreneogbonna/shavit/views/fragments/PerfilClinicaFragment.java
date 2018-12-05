@@ -1,6 +1,5 @@
 package com.example.lorreneogbonna.shavit.views.fragments;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,9 +8,9 @@ import android.view.ViewGroup;
 
 import com.example.lorreneogbonna.shavit.R;
 
-public class PedidosFragment extends Fragment {
+public class PerfilClinicaFragment extends Fragment {
 
-    public PedidosFragment() {
+    public PerfilClinicaFragment() {
         // Required empty public constructor
     }
 
@@ -21,7 +20,7 @@ public class PedidosFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pedidos, container, false);
+        return inflater.inflate(R.layout.fragment_perfil_clinica, container, false);
     }
 
 }

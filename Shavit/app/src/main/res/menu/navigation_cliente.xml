@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_busca"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="Busca" />
+
+    <item
+        android:id="@+id/navigation_agendamentos_cliente"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="Agenda" />
+
+    <item
+        android:id="@+id/navigation_promocoes_cliente"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="Promo" />
+
+    <item
+        android:id="@+id/navigation_perfil_cliente"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/perfil" />
+
+</menu>

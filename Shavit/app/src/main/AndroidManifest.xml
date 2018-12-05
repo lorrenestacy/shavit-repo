@@ -24,12 +24,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".views.activities.HomeAgendamentoClienteActivity"
+            android:name=".views.activities.HomeAgendamentoClinicaActivity"
             android:label="Shavit Home" />
         <activity
             android:name=".views.activities.CadastroActivity"
             android:label="Shavit Cadastro" />
-        <activity android:name=".views.activities.PedidoClienteActivity"></activity>
+        <activity android:name=".views.activities.PedidoClienteActivity" />
+        <activity android:name=".views.activities.HomeBuscarClienteActivity"></activity>
     </application>
 
 </manifest>

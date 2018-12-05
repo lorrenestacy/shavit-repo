@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 
 import com.example.lorreneogbonna.shavit.R;
 
-public class PromocoesListFragment extends Fragment {
+public class AgendamentosClinicaFragment extends Fragment {
 
-    public PromocoesListFragment() {
+    public AgendamentosClinicaFragment() {
         // Required empty public constructor
     }
 
@@ -20,7 +20,7 @@ public class PromocoesListFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_promocoes_list, container, false);
+        return inflater.inflate(R.layout.fragment_agendamentos, container, false);
     }
 
 }
