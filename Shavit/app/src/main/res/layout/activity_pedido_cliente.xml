@@ -24,19 +24,19 @@
         app:buttonGravity="bottom|top"
         app:fabAlignmentMode="end"
         app:navigationIcon="@drawable/ic_dashboard_black_24dp"
-        tools:ignore="BottomAppBar"
+        tools:ignore="BottomAppBar,MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
     <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
+        android:id="@+id/navigation_cliente"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/navigation"
+        app:menu="@menu/navigation_cliente"
         app:labelVisibilityMode="labeled"/>
 
     <TextView

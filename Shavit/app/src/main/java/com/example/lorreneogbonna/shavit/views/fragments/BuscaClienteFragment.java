@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 
 import com.example.lorreneogbonna.shavit.R;
 
-public class AgendamentosFragment extends Fragment {
 
-    public AgendamentosFragment() {
+public class BuscaClienteFragment extends Fragment {
+    public BuscaClienteFragment() {
         // Required empty public constructor
     }
 
@@ -20,7 +20,6 @@ public class AgendamentosFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_agendamentos, container, false);
+        return inflater.inflate(R.layout.fragment_busca_cliente, container, false);
     }
-
 }

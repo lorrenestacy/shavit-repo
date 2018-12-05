@@ -4,6 +4,7 @@ import com.example.lorreneogbonna.shavit.Model.Cadastro;
 import com.example.lorreneogbonna.shavit.Model.Cliente;
 import com.example.lorreneogbonna.shavit.Model.Clinica;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AppController {
@@ -13,15 +14,24 @@ public class AppController {
     ClinicaController clinicaController;
     Login loginController;
 
-private boolean cadastrarUser(int tipoUser){
-    //tipoUser 1 - clinica 2 cliente
-
-    if(tipoUser==1){
-
+    public AppController() {
+        this.clientes = new ArrayList<Cliente>();
+        this.clinicas = new ArrayList<Clinica>();
+        this.clienteController = new ClienteController();
+        this.clinicaController = new ClinicaController();
+        this.loginController = new Login();
     }
-    else if(tipoUser ==2){
-
+    public int cadastrarCliente(String nome,String email,String morada,String telefone,String nif, int idade, String password){
+        Cliente cliente = new Cliente(nome,  email,  idade,  morada,  telefone,  nif, password);
+        clientes.add(cliente);
+        return clientes.size() -1; //fazer retornar -1 pra uma falha no cadastro
     }
-    return false;
-}
+    public int cadastrarClinica(String nome,String email,String morada,String telefone,String nif, String password){
+        Clinica clinica = new Clinica(nome,  email,  morada,  telefone,  nif, password);
+        clinicas.add(clinica);
+        return clinicas.size() -1; //fazer retornar -1 pra uma falha no cadastro
+    }
+    public int login(String user, String pass, int typeUser){
+        return loginController.autenticar(clientes, clinicas, user, pass, typeUser);
+    }
 }

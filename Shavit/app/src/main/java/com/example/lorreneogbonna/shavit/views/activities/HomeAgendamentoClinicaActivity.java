@@ -9,24 +9,24 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.example.lorreneogbonna.shavit.views.fragments.PerfilFragment;
-import com.example.lorreneogbonna.shavit.views.fragments.AgendamentosFragment;
+import com.example.lorreneogbonna.shavit.views.fragments.PerfilClinicaFragment;
+import com.example.lorreneogbonna.shavit.views.fragments.AgendamentosClinicaFragment;
 import com.example.lorreneogbonna.shavit.R;
-import com.example.lorreneogbonna.shavit.views.fragments.PedidosFragment;
+import com.example.lorreneogbonna.shavit.views.fragments.PedidosClinicaFragment;
 import com.example.lorreneogbonna.shavit.views.fragments.ServicosFragment;
 
-public class HomeAgendamentoClienteActivity extends AppCompatActivity {
+public class HomeAgendamentoClinicaActivity extends AppCompatActivity {
 
-    private Fragment fragmentAgendamentos = new AgendamentosFragment();
-    private Fragment fragmentPedidos = new PedidosFragment();
+    private Fragment fragmentAgendamentos = new AgendamentosClinicaFragment();
+    private Fragment fragmentPedidos = new PedidosClinicaFragment();
     private Fragment fragmentServicos = new ServicosFragment();
-    private Fragment fragmentPefil = new PerfilFragment();
+    private Fragment fragmentPefil = new PerfilClinicaFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_agendamentos_cliente);
+        setContentView(R.layout.activity_home_agendamentos_clinica);
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationSelectionItemListener());

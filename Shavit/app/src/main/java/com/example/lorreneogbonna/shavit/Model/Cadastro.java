@@ -6,13 +6,15 @@ public class Cadastro {
     String morada;
     String telefone;
     String nif;
+    String password;
 
-    public Cadastro(String nome, String email, int idade, String morada, String telefone, String nif) {
+    public Cadastro(String nome, String email, String morada, String telefone, String nif, String password) {
         this.nome = nome;
         this.email = email;
         this.morada = morada;
         this.telefone = telefone;
         this.nif = nif;
+        this.password = password;
     }
 
     public String getNome() {
@@ -21,6 +23,14 @@ public class Cadastro {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
