@@ -1,9 +1,11 @@
 package com.example.lorreneogbonna.shavit.views.fragments;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.lorreneogbonna.shavit.Model.Servico;
 import com.example.lorreneogbonna.shavit.R;
+import com.example.lorreneogbonna.shavit.ServicoActivity;
 import com.example.lorreneogbonna.shavit.views.adapters.ServicosAdapter;
 import com.example.lorreneogbonna.shavit.views.utils.OnClickedItem;
 
@@ -45,6 +48,15 @@ public class ServicosListFragment extends Fragment {
 
         super.onViewCreated(view, savedInstanceState);
 
+        FloatingActionButton btnAddServico = getView().findViewById(R.id.btnAddServico);
+        btnAddServico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentToNewServico = new Intent(getContext(),ServicoActivity.class);
+                startActivity(intentToNewServico);
+            }
+        });
+
         listServicos = getView().findViewById(R.id.listServicos);
 
         servicosAdapter = new ServicosAdapter(servicos, new OnClickedItem() {
@@ -53,10 +65,12 @@ public class ServicosListFragment extends Fragment {
             public void onclick(View view, int position) {
 
                 Servico clickedServico = servicos.get(position);
-                Toast.makeText(getActivity(),
-                                clickedServico.getNome(),
-                                Toast.LENGTH_SHORT)
-                                .show();
+
+                Intent editServicoIntent = new Intent(getContext(), ServicoActivity.class);
+                editServicoIntent.putExtra(ServicoActivity.EXTRA_SERVICO_NAME_KEY, clickedServico.getNome());
+                editServicoIntent.putExtra(ServicoActivity.EXTRA_SERVICO_DESCRIPTION_KEY, clickedServico.getDescricao());
+
+                startActivity(editServicoIntent);
             }
         });
 

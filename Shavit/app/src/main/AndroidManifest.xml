@@ -16,8 +16,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".views.activities.LoginActivity"
-            android:label="Shavit Login">
-        </activity>
+            android:label="Shavit Login"></activity>
         <activity
             android:name=".views.activities.HomeAgendamentoClinicaActivity"
             android:label="Shavit Home">
@@ -30,7 +29,12 @@
             android:name=".views.activities.CadastroActivity"
             android:label="Shavit Cadastro" />
         <activity android:name=".views.activities.PedidoClienteActivity" />
-        <activity android:name=".views.activities.HomeBuscarClienteActivity"></activity>
+        <activity android:name=".views.activities.HomeBuscarClienteActivity" />
+        <activity android:name=".ServicoActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.activities.HomeAgendamentoClinicaActivity" />
+        </activity>
     </application>
 
 </manifest>

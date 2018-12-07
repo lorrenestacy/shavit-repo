@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.fragments.ServicosListFragment">
 
     <android.support.v7.widget.RecyclerView
@@ -12,7 +13,17 @@
         android:clipToPadding="false"
         android:scrollbars="vertical" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnAddServico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/ic_dashboard_black_24dp"
+        tools:ignore="VectorDrawableCompat" />
 
-</FrameLayout>
+
+</RelativeLayout>
 
 

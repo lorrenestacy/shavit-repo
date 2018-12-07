@@ -35,4 +35,9 @@
     <string name="descricaoServicoDefault">Descrição serviço default</string>
     <string name="nomeProvedorDefault">Nome Provedor</string>
     <string name="telefoneProvedorDefault">+XXX  YY ZZZ ZZZZ</string>
+    <string name="nomeServicoHint">Nome Serviço</string>
+    <string name="descricaoServicoHint">Descrição do Serviço</string>
+    <string name="btnConfirmServico">Confirmar</string>
+    <string name="btnConfirm">Confirmar</string>
+    <string name="btnCancel">Cancelar</string>
 </resources>
