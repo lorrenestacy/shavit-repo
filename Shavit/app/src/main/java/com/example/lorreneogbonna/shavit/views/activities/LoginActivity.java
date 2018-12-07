@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = inputUser.getText().toString();
+                String user = inputUser.getText().toString().toLowerCase();
                 String pass = inputPassword.getText().toString();
                 int idUser = appController.login(user, pass, userType); //user eh o nome do usuario
                 if(idUser != -1){//success

@@ -16,14 +16,15 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".views.activities.LoginActivity"
-            android:label="Shavit Login"></activity>
-        <activity
-            android:name=".views.activities.HomeAgendamentoClinicaActivity"
-            android:label="Shavit Home">
+            android:label="Shavit Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".views.activities.HomeAgendamentoClinicaActivity"
+            android:label="Shavit Home">
         </activity>
         <activity
             android:name=".views.activities.CadastroActivity"

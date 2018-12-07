@@ -5,15 +5,79 @@
     android:layout_height="match_parent"
     tools:context=".views.fragments.PerfilClinicaFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/fragmentPerfilText" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/logoutClinica"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Perfil"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nomePerfilClinica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome:" />
+
+        <TextView
+            android:id="@+id/emailPerfilClinica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email:" />
+
+        <TextView
+            android:id="@+id/descricaoPerfilClinica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descrição:" />
+
+        <TextView
+            android:id="@+id/idadePerfilCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Idade:" />
+
+        <TextView
+            android:id="@+id/nifiPerfilClinica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NIf:" />
+
+        <TextView
+            android:id="@+id/fonePerfilClinica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fone:" />
+
+        <TextView
+            android:id="@+id/moradaPerfilClinica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Morada:" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <Button
+            android:id="@+id/logoutClinica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:layout_weight="1"/>
+            <Button
+                android:id="@+id/editarClinica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Editar"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </FrameLayout>

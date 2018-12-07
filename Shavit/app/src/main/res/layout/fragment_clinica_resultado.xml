@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.fragments.PerfilClienteFragment">
+    tools:context=".views.fragments.ClinicaResultado">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -11,66 +11,75 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Perfil"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Clinica"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nome:" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Idade:" />
+            android:text="Local:" />
 
         <TextView
-            android:id="@+id/moradaPerfilClinica"
+            android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Morada:" />
+            android:gravity="center"
+            android:text="Agendar Horário"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Telefone:" />
+            android:text="Serviços:" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/textView14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email:" />
+            android:text="Área:" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data:" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Horário:" />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
-
         <Button
-            android:id="@+id/LogoutCliente"
+            android:id="@+id/solicitarAgendamento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center"
-            android:text="Logout"
+            android:text="Solicitar Agendamento"
             android:layout_weight="1"/>
             <Button
-                android:id="@+id/editarCliente"
+                android:id="@+id/voltarAgendamento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal|center"
-                android:text="Editar"
+                android:text="Voltar"
                 android:layout_weight="1"/>
-
         </LinearLayout>
-
-
     </LinearLayout>
 
 </FrameLayout>

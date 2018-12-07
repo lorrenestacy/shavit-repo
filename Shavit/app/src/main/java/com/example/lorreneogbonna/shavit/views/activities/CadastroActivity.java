@@ -33,6 +33,7 @@ public class CadastroActivity extends AppCompatActivity {
         final Switch switchUser = (Switch) findViewById(R.id.switchUser);
 
         Button buttonCadastrar = (Button) findViewById(R.id.cadastrarSend);
+        Button buttonCancelar = (Button) findViewById(R.id.cancelarCadastro);
 
         switchUser.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -53,7 +54,7 @@ public class CadastroActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String nome = inputNome.getText().toString();
+                String nome = inputNome.getText().toString().toLowerCase();
                 String email = inputEmail.getText().toString();
                 String morada = inputMorada.getText().toString();
                 String telefone = inputTelefone.getText().toString();
@@ -86,6 +87,14 @@ public class CadastroActivity extends AppCompatActivity {
                 }
 
 
+            }
+        });
+
+        buttonCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CadastroActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
     }

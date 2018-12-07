@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
 
 import com.example.lorreneogbonna.shavit.R;
 
@@ -18,6 +19,12 @@ public class BuscaClienteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_busca_cliente, container, false);
+
+        RadioButton maleRadioButton, femaleRadioButton;
+
+        maleRadioButton = (RadioButton) view.findViewById(R.id.comumBusca);
+        femaleRadioButton = (RadioButton) view.findViewById(R.id.dataHoraBusca);
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_busca_cliente, container, false);
