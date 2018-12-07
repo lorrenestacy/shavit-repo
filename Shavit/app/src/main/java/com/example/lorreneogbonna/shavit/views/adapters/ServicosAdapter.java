@@ -18,7 +18,9 @@ public class ServicosAdapter extends RecyclerView.Adapter<ServicosAdapter.Servic
     private List<Servico> servicos;
     private OnClickedItem clickedItemListener;
 
-    public ServicosAdapter (List<Servico> servicos, OnClickedItem clickedItemListener) {
+    public ServicosAdapter (List<Servico> servicos,
+                            OnClickedItem clickedItemListener) {
+
         this.servicos = servicos;
         this.clickedItemListener = clickedItemListener;
     }
@@ -52,7 +54,7 @@ public class ServicosAdapter extends RecyclerView.Adapter<ServicosAdapter.Servic
         private TextView lblNomeServico;
         private TextView lblDescricaoServico;
 
-        public ServicoViewHolder(@NonNull View itemView) {
+        private ServicoViewHolder(@NonNull View itemView) {
 
             super(itemView);
 
@@ -66,6 +68,7 @@ public class ServicosAdapter extends RecyclerView.Adapter<ServicosAdapter.Servic
         public void onClick(View v) {
             clickedItemListener.onclick(v,this.getLayoutPosition());
         }
+
     }
 
 }

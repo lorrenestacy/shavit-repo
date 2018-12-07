@@ -49,8 +49,7 @@ public class ServicosFragment extends Fragment {
 
         //viewPager's tabs
         tabsPageAdapter.addFragment(new ServicosListFragment(), "Serviços");
-        tabsPageAdapter.addFragment(new ProvedoresListFragment(), "Provedores");
-        tabsPageAdapter.addFragment(new PromocoesListClinicaFragment(), "Promoções");
+        tabsPageAdapter.addFragment(new ProvedoresListClinicaFragment(), "Provedores");
 
         viewPager.setAdapter(tabsPageAdapter);
     }

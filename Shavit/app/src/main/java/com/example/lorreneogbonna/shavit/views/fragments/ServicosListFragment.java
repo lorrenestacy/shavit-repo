@@ -48,12 +48,15 @@ public class ServicosListFragment extends Fragment {
         listServicos = getView().findViewById(R.id.listServicos);
 
         servicosAdapter = new ServicosAdapter(servicos, new OnClickedItem() {
+
             @Override
             public void onclick(View view, int position) {
-                //just displaying what it would look like to implement
-                //some behaviour whenever a item of the list is clicked
+
                 Servico clickedServico = servicos.get(position);
-                Toast.makeText(getActivity(), clickedServico.getNome(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(),
+                                clickedServico.getNome(),
+                                Toast.LENGTH_SHORT)
+                                .show();
             }
         });
 

@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 
 import com.example.lorreneogbonna.shavit.R;
 
-public class PromocoesListClinicaFragment extends Fragment {
+public class PromocoesListFragment extends Fragment {
 
-    public PromocoesListClinicaFragment() {
+    public PromocoesListFragment() {
         // Required empty public constructor
     }
 

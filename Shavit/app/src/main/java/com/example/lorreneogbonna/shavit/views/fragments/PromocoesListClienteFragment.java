@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import com.example.lorreneogbonna.shavit.R;
 
 public class PromocoesListClienteFragment extends Fragment {
+
     public PromocoesListClienteFragment() {
         // Required empty public constructor
     }
