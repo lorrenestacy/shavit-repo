@@ -4,13 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.fragments.PedidosClinicaFragment">
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Pedidos"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Pedidos"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tabsListPedidoClinica"/>
+    </LinearLayout>
 </FrameLayout>

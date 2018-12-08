@@ -29,7 +29,7 @@ public class PromocaoAdapter extends RecyclerView.Adapter<PromocaoAdapter.Promoc
     public PromocaoViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(viewGroup.getContext());
-        View viewItem = layoutInflater.inflate(R.layout.item_agendamento_card,viewGroup,false);
+        View viewItem = layoutInflater.inflate(R.layout.item_promocao_card,viewGroup,false);
 
         return new PromocaoViewHolder(viewItem);
     }
@@ -41,7 +41,7 @@ public class PromocaoAdapter extends RecyclerView.Adapter<PromocaoAdapter.Promoc
 
         agendamentoViewHolder.lblAgendamentoData.setText(promocao.getDercricao());
         agendamentoViewHolder.lblAgendamentoHora.setText(promocao.getPreco());
-        agendamentoViewHolder.lblAgendamentoHora.setText(promocao.getPeriodo());
+//        agendamentoViewHolder.lblAgendamentoHora.setText(promocao.getPeriodo());
     }
 
     @Override

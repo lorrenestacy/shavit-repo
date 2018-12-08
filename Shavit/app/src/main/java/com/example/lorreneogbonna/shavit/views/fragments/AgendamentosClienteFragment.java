@@ -95,7 +95,6 @@ public class AgendamentosClienteFragment extends Fragment {
         protected void onPostExecute(List<Agendamento> fetchedAgendamentos) {
 
             super.onPostExecute(agendamentos);
-
             int listCurrentSize = agendamentos.size();
 
             agendamentos.clear();

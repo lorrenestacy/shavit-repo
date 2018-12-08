@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.example.lorreneogbonna.shavit.R;
 
-public class PedidoClienteActivity extends AppCompatActivity {
+public class PedidoClinicaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
