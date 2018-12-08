@@ -31,7 +31,7 @@
             android:label="Shavit Cadastro" />
         <activity android:name=".views.activities.PedidoClinicaActivity" />
         <activity android:name=".views.activities.HomeBuscarClienteActivity" />
-        <activity android:name=".ServicoActivity">
+        <activity android:name=".views.activities.ServicoActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".views.activities.HomeAgendamentoClinicaActivity" />
