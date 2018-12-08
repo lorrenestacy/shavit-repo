@@ -82,7 +82,7 @@ public class ServicosListFragment extends Fragment {
         new LoadServicos().execute();
     }
 
-    private class LoadServicos extends AsyncTask<Void,Void,List<Servico>> {
+    protected class LoadServicos extends AsyncTask<Void,Void,List<Servico>> {
 
         @Override
         protected List<Servico> doInBackground(Void... voids) {
