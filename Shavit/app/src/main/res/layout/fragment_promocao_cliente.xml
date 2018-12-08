@@ -6,12 +6,40 @@
     tools:context=".views.fragments.PromocoesListClienteFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Promocões"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Promocões"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Buscar promo" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/buscarPromo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buscar" />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tabsListPromocaoCliente"/>
+
+    </LinearLayout>
+
 
 </FrameLayout>

@@ -1,15 +1,16 @@
-package com.example.lorreneogbonna.shavit;
+package com.example.lorreneogbonna.shavit.views.activities;
 
-import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class ServicoActivity extends AppCompatActivity {
+import com.example.lorreneogbonna.shavit.R;
+
+public class AgendamentoActivity extends AppCompatActivity {
 
     public static final String EXTRA_SERVICO_NAME_KEY = "nameServicoId";
     public static final String EXTRA_SERVICO_DESCRIPTION_KEY = "descriptionServicoId";
@@ -28,8 +29,8 @@ public class ServicoActivity extends AppCompatActivity {
 
         //getting possible values for intent
         Intent intent = getIntent();
-        String nameService = intent.getStringExtra(ServicoActivity.EXTRA_SERVICO_NAME_KEY);
-        String descriptionService = intent.getStringExtra(ServicoActivity.EXTRA_SERVICO_DESCRIPTION_KEY);
+        String nameService = intent.getStringExtra(AgendamentoActivity.EXTRA_SERVICO_NAME_KEY);
+        String descriptionService = intent.getStringExtra(AgendamentoActivity.EXTRA_SERVICO_DESCRIPTION_KEY);
 
         txtServicoNameText.setText(nameService == null ? "" : nameService);
         txtServicoDescriptionText.setText(descriptionService == null ? "" : descriptionService);
@@ -39,7 +40,7 @@ public class ServicoActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //placeholder operation
-                Toast.makeText(ServicoActivity.this,
+                Toast.makeText(AgendamentoActivity.this,
                         "Operação realizada com sucesso",
                         Toast.LENGTH_SHORT).show();
 

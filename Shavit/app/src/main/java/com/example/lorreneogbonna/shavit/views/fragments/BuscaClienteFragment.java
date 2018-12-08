@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,9 +17,8 @@ import android.widget.RadioGroup;
 
 import com.example.lorreneogbonna.shavit.Model.Servico;
 import com.example.lorreneogbonna.shavit.R;
-import com.example.lorreneogbonna.shavit.ServicoActivity;
+import com.example.lorreneogbonna.shavit.views.activities.ServicoActivity;
 import com.example.lorreneogbonna.shavit.views.adapters.ServicosAdapter;
-import com.example.lorreneogbonna.shavit.views.adapters.TabPageAdapter;
 import com.example.lorreneogbonna.shavit.views.utils.OnClickedItem;
 
 import java.util.ArrayList;

@@ -12,10 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.lorreneogbonna.shavit.Model.Agendamento;
+import com.example.lorreneogbonna.shavit.Model.Cliente;
+import com.example.lorreneogbonna.shavit.Model.Clinica;
 import com.example.lorreneogbonna.shavit.Model.Servico;
 import com.example.lorreneogbonna.shavit.R;
-import com.example.lorreneogbonna.shavit.ServicoActivity;
-import com.example.lorreneogbonna.shavit.views.adapters.ServicosAdapter;
+import com.example.lorreneogbonna.shavit.views.activities.AgendamentoActivity;
+import com.example.lorreneogbonna.shavit.views.activities.ServicoActivity;
+import com.example.lorreneogbonna.shavit.views.adapters.AgendamentosAdapter;
 import com.example.lorreneogbonna.shavit.views.utils.OnClickedItem;
 
 import java.util.ArrayList;
@@ -23,9 +26,10 @@ import java.util.List;
 
 
 public class AgendamentosClienteFragment extends Fragment {
-    private static final String EXTRA_SERVICO_NAME_KEY = "";
+    private static final String EXTRA_SERVICO_NAME_KEY = "agendamentoId";
+    private static final String EXTRA_SERVICO_DESCRIPTION_KEY = "agendamentoId";
     private List<Agendamento> agendamentos;
-    private ServicosAdapter servicosAdapter;
+    private AgendamentosAdapter agendamentosAdapter;
     private RecyclerView listAgendamentos;
     View view;
     public AgendamentosClienteFragment() {
@@ -39,64 +43,67 @@ public class AgendamentosClienteFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_agendamentos_cliente, container, false);
         // Inflate the layout for this fragment
 
-
         //carregar lista
         listAgendamentos = view.findViewById(R.id.tabsListAgendamentosCliente);
 
-        servicosAdapter = new ServicosAdapter(agendamentos, new OnClickedItem() {
+        agendamentosAdapter = new AgendamentosAdapter(agendamentos, new OnClickedItem() {
 
             @Override
             public void onclick(View view, int position) {
 
                 Agendamento clickedAgendamento = agendamentos.get(position);
 
-                Intent editServicoIntent = new Intent(getContext(), ServicoActivity.class);
+                Intent editServicoIntent = new Intent(getContext(), AgendamentoActivity.class);
+
                 editServicoIntent.putExtra(AgendamentosClienteFragment.EXTRA_SERVICO_NAME_KEY, clickedAgendamento.getData());
-                editServicoIntent.putExtra(ServicoActivity.EXTRA_SERVICO_DESCRIPTION_KEY, clickedAgendamento.getHorario());
+                editServicoIntent.putExtra(AgendamentosClienteFragment.EXTRA_SERVICO_DESCRIPTION_KEY, clickedAgendamento.getHorario());
 
                 startActivity(editServicoIntent);
             }
         });
 
         //setting up recycler view
-        listServicos.setLayoutManager(new LinearLayoutManager(getContext()));
-        listServicos.setItemAnimator(new DefaultItemAnimator());
-        listServicos.setAdapter(servicosAdapter);
+        listAgendamentos.setLayoutManager(new LinearLayoutManager(getContext()));
+        listAgendamentos.setItemAnimator(new DefaultItemAnimator());
+        listAgendamentos.setAdapter(agendamentosAdapter);
 
         new AgendamentosClienteFragment.LoadServicos().execute();
-
 
         return view;
     }
 
-    public class LoadServicos extends AsyncTask<Void,Void,List<Servico>> {
+    public class LoadServicos extends AsyncTask<Void,Void,List<Agendamento>> {
 
         @Override
-        protected List<Servico> doInBackground(Void... voids) {
+        protected List<Agendamento> doInBackground(Void... voids) {
+            Cliente cliente = new Cliente("lo", "lo@com.pt", 20, "rua de la", "36762789", "38237827", "123");
+            Clinica clinica = new Clinica("minha stetic", "stetic@gmail.com", "rua de la", "738273283", "7832782", "123");
+            Servico servico = new Servico("servico1", "tal tal");
+            //pegar a referencia da propria clinica dps
 
             //TODO remove this when we get the database working
-            List<Servico> fetchedServicesMock = new ArrayList<>();
-            fetchedServicesMock.add(new Servico("Nome Serviço 1", "Descrição serviço 1"));
-            fetchedServicesMock.add(new Servico("Nome Serviço 2", "Descrição serviço 2"));
-            fetchedServicesMock.add(new Servico("Nome Serviço 3", "Descrição serviço 3"));
-            fetchedServicesMock.add(new Servico("Nome Serviço 4", "Descrição serviço 4"));
+            List<Agendamento> fetchedAgendamentosMock = new ArrayList<>();
+            fetchedAgendamentosMock.add(new Agendamento(cliente, clinica, "00:00", "10/10/10", servico));
+            fetchedAgendamentosMock.add(new Agendamento(cliente, clinica, "00:00", "10/10/10", servico));
+            fetchedAgendamentosMock.add(new Agendamento(cliente, clinica, "00:00", "10/10/10", servico));
+            fetchedAgendamentosMock.add(new Agendamento(cliente, clinica, "00:00", "10/10/10", servico));
 
-            return fetchedServicesMock;
+            return fetchedAgendamentosMock;
         }
 
         @Override
-        protected void onPostExecute(List<Servico> fetchedServicos) {
+        protected void onPostExecute(List<Agendamento> fetchedAgendamentos) {
 
-            super.onPostExecute(servicos);
+            super.onPostExecute(agendamentos);
 
-            int listCurrentSize = servicos.size();
+            int listCurrentSize = agendamentos.size();
 
-            servicos.clear();
-            servicos.addAll(fetchedServicos);
+            agendamentos.clear();
+            agendamentos.addAll(fetchedAgendamentos);
 
             //notifying the adapter about the changes on the list
-            servicosAdapter.notifyItemRangeRemoved(0, listCurrentSize);
-            servicosAdapter.notifyItemRangeInserted(0, servicos.size());
+            agendamentosAdapter.notifyItemRangeRemoved(0, listCurrentSize);
+            agendamentosAdapter.notifyItemRangeInserted(0, agendamentos.size());
 
         }
     }
