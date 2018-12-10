@@ -31,7 +31,7 @@ public class AppController {
         clinicas.add(clinica);
         return clinicas.size() -1; //fazer retornar -1 pra uma falha no cadastro
     }
-    public int login(String user, String pass, int typeUser){
+    public Cadastro login(String user, String pass, int typeUser){
         return loginController.autenticar(clientes, clinicas, user, pass, typeUser);
     }
 }

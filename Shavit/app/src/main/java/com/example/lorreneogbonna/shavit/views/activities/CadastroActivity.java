@@ -68,7 +68,11 @@ public class CadastroActivity extends AppCompatActivity {
                     if (idUser != -1) {//success
                         Intent intent = new Intent(CadastroActivity.this, HomeAgendamentoClinicaActivity.class);
                         intent.putExtra("nomeUsuario",nome);
-                        intent.putExtra("idUsuario",idUser);
+                        intent.putExtra("emailUsuario",email);
+                        intent.putExtra("moradalUsuario",morada);
+                        intent.putExtra("telefoneUsuario",telefone);
+                        intent.putExtra("nifUsuario",nif);
+                        intent.putExtra("passwordUsuario",password);
                         startActivity(intent);
                     }
                 }
@@ -79,7 +83,12 @@ public class CadastroActivity extends AppCompatActivity {
                     if(idUser != -1) {//success
                         Intent intent = new Intent(CadastroActivity.this, HomeBuscarClienteActivity.class);
                         intent.putExtra("nomeUsuario",nome);
-                        intent.putExtra("idUsuario",idUser);
+                        intent.putExtra("emailUsuario",email);
+                        intent.putExtra("moradaUsuario",morada);
+                        intent.putExtra("telefoneUsuario",telefone);
+                        intent.putExtra("nifUsuario",nif);
+                        intent.putExtra("idadeUsuario",Integer.parseInt(inputIdade.getText().toString()));
+
                         startActivity(intent);
 
                     }

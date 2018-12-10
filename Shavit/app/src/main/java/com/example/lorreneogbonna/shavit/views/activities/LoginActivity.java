@@ -11,6 +11,8 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import com.example.lorreneogbonna.shavit.Controller.AppController;
+import com.example.lorreneogbonna.shavit.Model.Cadastro;
+import com.example.lorreneogbonna.shavit.Model.Cliente;
 import com.example.lorreneogbonna.shavit.R;
 
 /**
@@ -56,18 +58,28 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String user = inputUser.getText().toString().toLowerCase();
                 String pass = inputPassword.getText().toString();
-                int idUser = appController.login(user, pass, userType); //user eh o nome do usuario
-                if(idUser != -1){//success
+                Cadastro usuario = appController.login(user, pass, userType); //user eh o nome do usuario
+                if(usuario != null){//success
                     if(userType==1){//clinica
+                        //quando tiver banco mande só o id do usuario pro intent e faça ele utilizar nos fragments
+
                         Intent intent = new Intent(LoginActivity.this, HomeAgendamentoClinicaActivity.class);
                         intent.putExtra("nomeUsuario",user);
-                        intent.putExtra("idUsuario",idUser);
+                        intent.putExtra("moradaUsuario",usuario.getMorada());
+                        intent.putExtra("emailUsuario",usuario.getEmail());
+                        intent.putExtra("telefoneUsuario",usuario.getTelefone());
+                        intent.putExtra("nifUsuario",usuario.getNif());
                         startActivity(intent);
                     }
                     else {//cliente
                         Intent intent = new Intent(LoginActivity.this, HomeBuscarClienteActivity.class);
-                        intent.putExtra("nomeUsuario",user);
-                        intent.putExtra("idUsuario",idUser);
+                        Cliente cliente = (Cliente) usuario;
+                        intent.putExtra("nomeUsuario",usuario.getNome());
+                        intent.putExtra("idadeUsuario",cliente.getIdade());
+                        intent.putExtra("moradaUsuario",usuario.getMorada());
+                        intent.putExtra("emailUsuario",usuario.getEmail());
+                        intent.putExtra("telefoneUsuario",usuario.getTelefone());
+                        intent.putExtra("nifUsuario",usuario.getNif());
                         startActivity(intent);
 
                     }

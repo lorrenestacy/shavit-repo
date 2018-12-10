@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".views.activities.LoginActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="51dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
         android:text="SHAVIT"
+        android:textColor="@android:color/background_light"
         android:textSize="36sp"
         android:textStyle="bold"
+        tools:fontFamily="@font/audiowide"
         tools:layout_editor_absoluteX="129dp"
         tools:layout_editor_absoluteY="62dp" />
 
     <Switch
         android:id="@+id/switchUserLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="27dp"
+        android:layout_marginBottom="10dp"
         android:checked="true"
+        android:gravity="center_vertical|center"
         android:text="Clinica"
         android:textOff="Clinica"
         android:textOn="Cliente"
@@ -42,7 +51,9 @@
             android:id="@+id/input_usuario_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="usuario" />
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/background_light"
+            android:hint="usuário" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -56,14 +67,18 @@
             android:id="@+id/input_pass_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="palavra-passe" />
+            android:layout_marginBottom="20dp"
+            android:background="@android:color/background_light"
+            android:hint="palavra-passe"
+            android:inputType="textPassword" />
     </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/button_logar"
         android:layout_width="match_parent"
         android:layout_height="43dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/logar"
         android:isScrollContainer="false"
         android:text="LOGAR"
         tools:ignore="MissingConstraints"
@@ -74,6 +89,7 @@
         android:id="@+id/button_cadastrar"
         android:layout_width="match_parent"
         android:layout_height="43dp"
+        android:background="@color/cadastrarbutton"
         android:text="CADASTRAR"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="146dp"

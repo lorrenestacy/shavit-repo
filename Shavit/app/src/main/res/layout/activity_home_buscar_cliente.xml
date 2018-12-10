@@ -5,15 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.activities.HomeBuscarClienteActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_gravity="top"
+        app:buttonGravity="bottom|top"
+        app:fabAlignmentMode="end"
+        app:navigationIcon="@drawable/ic_dashboard_black_24dp"
+        tools:ignore="BottomAppBar">
+        <TextView
+            android:id="@+id/bemVindoUsuarioCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bem-vindo, " />
+    </android.support.design.bottomappbar.BottomAppBar>
 
     <FrameLayout
         android:id="@+id/homeClienteFragmentContent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="98dp"/>
+        tools:ignore="MissingConstraints"/>
+</LinearLayout>
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation_cliente"

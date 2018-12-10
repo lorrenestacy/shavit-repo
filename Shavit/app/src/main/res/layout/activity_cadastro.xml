@@ -9,13 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="132dp"
-            android:layout_marginLeft="132dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp"
             android:text="Cadastro"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -61,7 +62,8 @@
                     android:id="@+id/inputNome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="nome" />
+                    android:hint="nome"
+                    android:importantForAutofill="noExcludeDescendants"/>
             </android.support.design.widget.TextInputLayout>
 
 
@@ -74,7 +76,8 @@
                     android:id="@+id/inputEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="email" />
+                    android:hint="email"
+                    android:importantForAutofill="noExcludeDescendants"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -91,7 +94,8 @@
                     android:id="@+id/inputMorada"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="morada" />
+                    android:hint="morada"
+                    android:importantForAutofill="noExcludeDescendants"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -107,7 +111,8 @@
                     android:id="@+id/inputTelefone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="telefone" />
+                    android:hint="telefone"
+                    android:importantForAutofill="noExcludeDescendants"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -121,7 +126,8 @@
                     android:id="@+id/inputNif"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="nif" />
+                    android:hint="nif"
+                    android:importantForAutofill="noExcludeDescendants"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -135,7 +141,8 @@
                     android:id="@+id/inputIdade"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="idade" />
+                    android:hint="idade"
+                    android:importantForAutofill="noExcludeDescendants"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -149,7 +156,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="palavra-passe"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+                    android:importantForAutofill="noExcludeDescendants"/>
             </android.support.design.widget.TextInputLayout>
         </LinearLayout>
     <LinearLayout

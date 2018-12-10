@@ -6,19 +6,45 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.activities.HomeAgendamentoClinicaActivity">
-
-    <FrameLayout
-        android:id="@+id/homeFragmentContent"
+    tools:context=".views.activities.HomeAgendamentoClinicaActivity"
+    android:orientation="vertical">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_above="@+id/navigation"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    </FrameLayout>
+    <android.support.design.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_gravity="top"
+        app:buttonGravity="bottom|top"
+        app:fabAlignmentMode="end"
+        app:navigationIcon="@drawable/ic_dashboard_black_24dp"
+        tools:ignore="BottomAppBar">
+        <TextView
+            android:id="@+id/bemVindoUsuarioClinica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bem-vindo, " />
+    </android.support.design.bottomappbar.BottomAppBar>
+</LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/homeFragmentContent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_above="@+id/navigation"
+            app:layout_constraintBottom_toTopOf="@+id/navigation"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="Suspicious0dp"
+            android:layout_marginTop="60dp">
+
+        </FrameLayout>
+    <!--</LinearLayout>-->
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
