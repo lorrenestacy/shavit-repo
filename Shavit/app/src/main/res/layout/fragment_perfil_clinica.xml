@@ -9,62 +9,130 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Perfil"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:text="Perfil"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/nomePerfilClinica"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nome:" />
-
-        <TextView
-            android:id="@+id/emailPerfilClinica"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email:" />
-
-        <TextView
-            android:id="@+id/descricaoPerfilClinica"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Descrição:" />
-
-        <TextView
-            android:id="@+id/idadePerfilCliente"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Idade:" />
-
-        <TextView
-            android:id="@+id/nifPerfilClinica"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="NIf:" />
-
-        <TextView
-            android:id="@+id/fonePerfilClinica"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fone:" />
-
-        <TextView
-            android:id="@+id/moradaPerfilClinica"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Morada:" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:id="@+id/textsPerfilClinica">
+            <TextView
+                android:id="@+id/nomePerfilClinica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nome:" />
+
+            <TextView
+                android:id="@+id/emailPerfilClinica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email:" />
+
+            <TextView
+                android:id="@+id/descricaoPerfilClinica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descrição:" />
+
+            <TextView
+                android:id="@+id/nifPerfilClinica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NIf:" />
+
+            <TextView
+                android:id="@+id/fonePerfilClinica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fone:" />
+
+            <TextView
+                android:id="@+id/moradaPerfilClinica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Morada:" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/inputsEditarClinica"
+            android:visibility="gone">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nome" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Descrição" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nif" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fone" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Morada" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/perfilButtons">
         <Button
             android:id="@+id/logoutClinica"
             android:layout_width="match_parent"
@@ -76,6 +144,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Editar"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/editarPerfilButtons"
+            android:visibility="gone">
+            <Button
+                android:id="@+id/cancelarEditar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancelar"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/salvarEditar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Salvar"
                 android:layout_weight="1"/>
         </LinearLayout>
 

@@ -41,7 +41,7 @@ public class PerfilClienteFragment extends Fragment {
         final TextView telefone = view.findViewById(R.id.fonePerfilCliente);
         final TextView idade = view.findViewById(R.id.idadePerfilCliente);
         final TextView morada = view.findViewById(R.id.moradaPerfilCliente);
-        final TextView nif = view.findViewById(R.id.nifPerfilClinica);
+        final TextView nif = view.findViewById(R.id.nifPerfilCliente);
 
         final LinearLayout editInputsLayout = view.findViewById(R.id.editInputsLayout);
         final LinearLayout textsLayout = view.findViewById(R.id.perfilTextLayout);

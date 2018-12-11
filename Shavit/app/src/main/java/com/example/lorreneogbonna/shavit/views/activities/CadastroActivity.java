@@ -62,38 +62,47 @@ public class CadastroActivity extends AppCompatActivity {
                 String password = inputPassword.getText().toString();
 
                 int idUser = 0;
-                if(userType==1) {
-                    idUser = appController.cadastrarClinica(nome, email, morada, telefone, nif, password);
+                if(inputNome.getText().toString().length() > 0 &&
+                        inputEmail.getText().toString().length() > 0 &&
+                        inputMorada.getText().toString().length() > 0 &&
+                        inputTelefone.getText().toString().length() > 0 &&
+                        inputNif.getText().toString().length() > 0 &&
+                        inputPassword.getText().toString().length() > 0){
 
-                    if (idUser != -1) {//success
-                        Intent intent = new Intent(CadastroActivity.this, HomeAgendamentoClinicaActivity.class);
-                        intent.putExtra("nomeUsuario",nome);
-                        intent.putExtra("emailUsuario",email);
-                        intent.putExtra("moradalUsuario",morada);
-                        intent.putExtra("telefoneUsuario",telefone);
-                        intent.putExtra("nifUsuario",nif);
-                        intent.putExtra("passwordUsuario",password);
-                        startActivity(intent);
+                    if(userType==1) {
+                        idUser = appController.cadastrarClinica(nome, email, morada, telefone, nif, password);
+
+                        if (idUser != -1) {//success
+                            Intent intent = new Intent(CadastroActivity.this, HomeAgendamentoClinicaActivity.class);
+                            intent.putExtra("nomeUsuario",nome);
+                            intent.putExtra("emailUsuario",email);
+                            intent.putExtra("moradalUsuario",morada);
+                            intent.putExtra("telefoneUsuario",telefone);
+                            intent.putExtra("nifUsuario",nif);
+                            intent.putExtra("passwordUsuario",password);
+                            startActivity(intent);
+                        }
+                    }
+                    else{
+                        int idade = Integer.parseInt(inputIdade.getText().toString());
+                        idUser = appController.cadastrarCliente(nome, email, morada, telefone, nif, idade, password);
+
+                        if(idUser != -1) {//success
+                            Intent intent = new Intent(CadastroActivity.this, HomeBuscarClienteActivity.class);
+                            intent.putExtra("nomeUsuario",nome);
+                            intent.putExtra("emailUsuario",email);
+                            intent.putExtra("moradaUsuario",morada);
+                            intent.putExtra("telefoneUsuario",telefone);
+                            intent.putExtra("nifUsuario",nif);
+                            intent.putExtra("idadeUsuario",Integer.parseInt(inputIdade.getText().toString()));
+
+                            startActivity(intent);
+
+                        }
+
                     }
                 }
-                else{
-                    int idade = Integer.parseInt(inputIdade.getText().toString());
-                    idUser = appController.cadastrarCliente(nome, email, morada, telefone, nif, idade, password);
 
-                    if(idUser != -1) {//success
-                        Intent intent = new Intent(CadastroActivity.this, HomeBuscarClienteActivity.class);
-                        intent.putExtra("nomeUsuario",nome);
-                        intent.putExtra("emailUsuario",email);
-                        intent.putExtra("moradaUsuario",morada);
-                        intent.putExtra("telefoneUsuario",telefone);
-                        intent.putExtra("nifUsuario",nif);
-                        intent.putExtra("idadeUsuario",Integer.parseInt(inputIdade.getText().toString()));
-
-                        startActivity(intent);
-
-                    }
-
-                }
 
 
             }

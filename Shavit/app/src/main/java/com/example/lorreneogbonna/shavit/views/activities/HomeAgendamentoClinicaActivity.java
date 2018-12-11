@@ -21,7 +21,7 @@ public class HomeAgendamentoClinicaActivity extends AppCompatActivity {
     private Fragment fragmentPedidos = new PedidosClinicaFragment();
     private Fragment fragmentServicos = new ServicosFragment();
     private Fragment fragmentPefil = new PerfilClinicaFragment();
-
+    String nomeUsuario, moradaUsuario, emailUsuario, telefoneUsuario, nifUsuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -30,6 +30,13 @@ public class HomeAgendamentoClinicaActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationSelectionItemListener());
+
+        Bundle extras = getIntent().getExtras();
+        nomeUsuario = extras.getString("nomeUsuario");
+        moradaUsuario = extras.getString("moradaUsuario");
+        emailUsuario = extras.getString("emailUsuario");
+        telefoneUsuario = extras.getString("telefoneUsuario");
+        nifUsuario = extras.getString("nifUsuario");
 
         //loading initial fragment
         loadFragment(fragmentAgendamentos);
@@ -55,6 +62,14 @@ public class HomeAgendamentoClinicaActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.navigation_perfil:
+                    Bundle bundle = new Bundle();
+                    bundle.putString("nomeUsuario", nomeUsuario);
+                    bundle.putString("moradaUsuario", moradaUsuario);
+                    bundle.putString("emailUsuario", emailUsuario);
+                    bundle.putString("telefoneUsuario", telefoneUsuario);
+                    bundle.putString("nifUsuario", nifUsuario);
+
+                    fragmentPefil.setArguments(bundle);
                     loadFragment(fragmentPefil);
                     return true;
             }
