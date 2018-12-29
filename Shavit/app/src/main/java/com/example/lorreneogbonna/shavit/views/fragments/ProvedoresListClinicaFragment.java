@@ -1,9 +1,11 @@
 package com.example.lorreneogbonna.shavit.views.fragments;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.lorreneogbonna.shavit.Model.Provedor;
 import com.example.lorreneogbonna.shavit.R;
+import com.example.lorreneogbonna.shavit.views.activities.ProvedorActivity;
 import com.example.lorreneogbonna.shavit.views.adapters.ProvedoresAdapter;
 import com.example.lorreneogbonna.shavit.views.utils.OnClickedItem;
 
@@ -45,13 +48,29 @@ public class ProvedoresListClinicaFragment extends Fragment {
 
         super.onViewCreated(view, savedInstanceState);
 
+        FloatingActionButton btnAddServico = getView().findViewById(R.id.btnAddProvedor);
+        btnAddServico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentToNewServico = new Intent(getContext(),ProvedorActivity.class);
+                startActivity(intentToNewServico);
+            }
+        });
+
         rvListProvedores = getView().findViewById(R.id.listProvedores);
 
         provedoresAdapter = new ProvedoresAdapter(provedores, new OnClickedItem() {
             @Override
             public void onclick(View view, int position) {
                 Provedor clickedProvedor = provedores.get(position);
-                Toast.makeText(getActivity(), clickedProvedor.getNome() , Toast.LENGTH_SHORT).show();
+
+                Intent editProvedorIntent = new Intent(getContext(), ProvedorActivity.class);
+                editProvedorIntent.putExtra(ProvedorActivity.EXTRA_PROVEDOR_NAME_KEY, clickedProvedor.getNome());
+                editProvedorIntent.putExtra(ProvedorActivity.EXTRA_PROVEDOR_DESCRIPTION_KEY, clickedProvedor.getTelefone());
+
+                startActivity(editProvedorIntent);
+
+//                Toast.makeText(getActivity(), clickedProvedor.getNome() , Toast.LENGTH_SHORT).show();
             }
         });
 

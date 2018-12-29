@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.lorreneogbonna.shavit.views.fragments.PerfilClinicaFragment;
 import com.example.lorreneogbonna.shavit.views.fragments.AgendamentosClinicaFragment;
@@ -37,6 +38,13 @@ public class HomeAgendamentoClinicaActivity extends AppCompatActivity {
         emailUsuario = extras.getString("emailUsuario");
         telefoneUsuario = extras.getString("telefoneUsuario");
         nifUsuario = extras.getString("nifUsuario");
+
+        TextView bemVindoUsuario = findViewById(R.id.bemVindoUsuarioClinica);
+
+        String s1 = nomeUsuario.substring(0, 1).toUpperCase();
+        String nameCapitalized = s1 + nomeUsuario.substring(1);
+
+        bemVindoUsuario.setText(bemVindoUsuario.getText()+nameCapitalized+"!   Explore por aí");
 
         //loading initial fragment
         loadFragment(fragmentAgendamentos);

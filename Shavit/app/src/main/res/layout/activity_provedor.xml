@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.activities.ServicoActivity">
-
+    tools:context=".views.activities.ProvedorActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -25,11 +22,11 @@
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/txtNomeServico"
-                    android:inputType="textPersonName"
+                    android:id="@+id/txtNomeProvedor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/nomeServicoHint"
+                    android:hint="Nome Provedor"
+                    android:inputType="textPersonName"
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
@@ -40,12 +37,23 @@
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/txtDescricaoServico"
-                    android:inputType="textMultiLine"
+                    android:id="@+id/txtTelefoneProvedor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/descricaoServicoHint" />
+                    android:hint="Telefone"
+                    android:inputType="textMultiLine" />
 
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/txtServicoProvedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Serviço" />
             </android.support.design.widget.TextInputLayout>
 
             <LinearLayout
@@ -56,16 +64,16 @@
                 android:layout_marginBottom="20dp">
 
                 <Button
-                    android:id="@+id/btnAddServicoEdit"
+                    android:id="@+id/btnAddProvedorEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/btnConfirm"/>
+                    android:text="@string/btnConfirm" />
 
                 <Button
-                    android:id="@+id/btnCancelServicoEdit"
+                    android:id="@+id/btnCancelProvedorEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/btnCancel"/>
+                    android:text="@string/btnCancel" />
 
             </LinearLayout>
 

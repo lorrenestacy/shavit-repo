@@ -22,8 +22,6 @@
         app:backgroundTint="@color/colorPrimaryDark"
         app:srcCompat="@drawable/ic_dashboard_black_24dp"
         tools:ignore="VectorDrawableCompat" />
-
-
 </RelativeLayout>
 
 

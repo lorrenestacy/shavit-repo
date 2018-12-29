@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -52,6 +53,8 @@ public class BuscaClienteFragment extends Fragment {
             Context thiscontext = container.getContext();
             @Override
             public void onClick(View v) {
+                final TextInputEditText inputBuscaServicoHome = view.findViewById(R.id.inputBuscaServicoHome);
+                String valorBusca = inputBuscaServicoHome.getText().toString();
 
                 int selectedId=radioGroupBusca.getCheckedRadioButtonId();
                 int tipoBusca=0;
