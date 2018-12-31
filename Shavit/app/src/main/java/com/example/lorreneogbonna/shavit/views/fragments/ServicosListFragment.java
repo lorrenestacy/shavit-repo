@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.lorreneogbonna.shavit.Model.Clinica;
 import com.example.lorreneogbonna.shavit.Model.Servico;
 import com.example.lorreneogbonna.shavit.R;
 import com.example.lorreneogbonna.shavit.views.activities.ServicoActivity;
@@ -88,10 +89,11 @@ public class ServicosListFragment extends Fragment {
 
             //TODO remove this when we get the database working
             List<Servico> fetchedServicesMock = new ArrayList<>();
-            fetchedServicesMock.add(new Servico("Nome Serviço 1", "Descrição serviço 1"));
-            fetchedServicesMock.add(new Servico("Nome Serviço 2", "Descrição serviço 2"));
-            fetchedServicesMock.add(new Servico("Nome Serviço 3", "Descrição serviço 3"));
-            fetchedServicesMock.add(new Servico("Nome Serviço 4", "Descrição serviço 4"));
+            Clinica clinica = new Clinica( "Clinica 1",  "email1@email",  "rua algo",  "1282378",  "2182918",  "123");
+            fetchedServicesMock.add(new Servico("Nome Serviço 1", "Descrição serviço 1", 18.5, 1.5, clinica, "virilha"));
+            fetchedServicesMock.add(new Servico("Nome Serviço 2", "Descrição serviço 2", 15.7, 0.6, clinica, "buco"));
+            fetchedServicesMock.add(new Servico("Nome Serviço 3", "Descrição serviço 3", 35.6, 2.5, clinica, "coxa"));
+            fetchedServicesMock.add(new Servico("Nome Serviço 4", "Descrição serviço 4", 25.9, 1.5, clinica, "costas"));
 
             return fetchedServicesMock;
         }

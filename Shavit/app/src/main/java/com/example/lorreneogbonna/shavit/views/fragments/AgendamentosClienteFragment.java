@@ -78,7 +78,7 @@ public class AgendamentosClienteFragment extends Fragment {
         protected List<Agendamento> doInBackground(Void... voids) {
             Cliente cliente = new Cliente("lo", "lo@com.pt", 20, "rua de la", "36762789", "38237827", "123");
             Clinica clinica = new Clinica("minha stetic", "stetic@gmail.com", "rua de la", "738273283", "7832782", "123");
-            Servico servico = new Servico("servico1", "tal tal");
+            Servico servico = new Servico("Nome Serviço 4", "Descrição serviço 4", 25.9, 1.5, clinica, "costas");
             //pegar a referencia da propria clinica dps
 
             //TODO remove this when we get the database working

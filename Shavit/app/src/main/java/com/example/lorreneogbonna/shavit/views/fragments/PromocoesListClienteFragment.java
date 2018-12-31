@@ -88,7 +88,7 @@ public class PromocoesListClienteFragment extends Fragment {
         @Override
         protected List<Promocao> doInBackground(Void... voids) {
             Clinica clinica = new Clinica("minha stetic", "stetic@gmail.com", "rua de la", "738273283", "7832782", "123");
-            Servico servico = new Servico("servico1", "tal tal");
+            Servico servico = new Servico("Nome Serviço 1", "Descrição serviço 1", 25.5, 2.0, clinica , "axilas");
 
             //TODO remove this when we get the database working
             List<Promocao> fetchedPromocaoMock = new ArrayList<>();

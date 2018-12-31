@@ -7,15 +7,30 @@ public class Servico {
     private String tipo;
     private String nome;
     private String descricao;
-    private float duracao;
+    private double duracao;
     private List<Provedor> provedores;
     private String observacao;
-    private float preco;
+    private double preco;
+    private String areaCorpo;
+    Clinica clinica;
+
+    public Clinica getClinica() {
+        return clinica;
+    }
+
+    public String getAreaCorpo() {
+        return areaCorpo;
+    }
 
     //For the purposes of demonstrating the behaviour of the list, the only things we care about
-    public Servico (String nome, String descricao) {
+    public Servico (String nome, String descricao, double preco, double duracao, Clinica clinica, String areaCorpo) {
         this.nome = nome;
         this.descricao = descricao;
+
+        this.preco = preco;
+        this.areaCorpo = areaCorpo;
+        this.duracao = duracao;
+        this.clinica = clinica;
     }
 
     //region getters and setters
@@ -43,7 +58,7 @@ public class Servico {
         this.descricao = descricao;
     }
 
-    public float getDuracao() {
+    public double getDuracao() {
         return duracao;
     }
 
@@ -67,7 +82,7 @@ public class Servico {
         this.observacao = observacao;
     }
 
-    public float getPreco() {
+    public double getPreco() {
         return preco;
     }
 

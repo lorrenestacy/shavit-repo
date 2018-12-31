@@ -19,18 +19,19 @@
             android:label="Shavit Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".views.activities.HomeAgendamentoClinicaActivity"
-            android:label="Shavit Home">
-        </activity>
+            android:label="Shavit Home"></activity>
         <activity
             android:name=".views.activities.CadastroActivity"
             android:label="Shavit Cadastro" />
         <activity android:name=".views.activities.PedidoClinicaActivity" />
         <activity android:name=".views.activities.HomeBuscarClienteActivity" />
+        <activity android:name=".views.activities.AgendamentoActivity"/>
         <activity android:name=".views.activities.ServicoActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -40,6 +41,8 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".views.activities.DetalhesServicoBuscaActivity"></activity>
     </application>
 
 </manifest>

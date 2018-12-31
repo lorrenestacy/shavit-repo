@@ -15,9 +15,10 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.example.lorreneogbonna.shavit.Model.Clinica;
 import com.example.lorreneogbonna.shavit.Model.Servico;
 import com.example.lorreneogbonna.shavit.R;
-import com.example.lorreneogbonna.shavit.views.activities.ServicoActivity;
+import com.example.lorreneogbonna.shavit.views.activities.DetalhesServicoBuscaActivity;
 import com.example.lorreneogbonna.shavit.views.adapters.ServicosAdapter;
 import com.example.lorreneogbonna.shavit.views.utils.OnClickedItem;
 
@@ -68,10 +69,14 @@ public class BuscaClienteFragment extends Fragment {
 
                         Servico clickedServico = servicos.get(position);
 
-                        Intent editServicoIntent = new Intent(getContext(), ServicoActivity.class);
-                        editServicoIntent.putExtra(ServicoActivity.EXTRA_SERVICO_NAME_KEY, clickedServico.getNome());
-                        editServicoIntent.putExtra(ServicoActivity.EXTRA_SERVICO_DESCRIPTION_KEY, clickedServico.getDescricao());
-
+                        Intent editServicoIntent = new Intent(getContext(), DetalhesServicoBuscaActivity.class);
+                        editServicoIntent.putExtra(DetalhesServicoBuscaActivity.EXTRA_SERVICO_NAME_KEY, clickedServico.getNome());
+                        editServicoIntent.putExtra(DetalhesServicoBuscaActivity.EXTRA_SERVICO_DESCRIPTION_KEY, clickedServico.getDescricao());
+                        editServicoIntent.putExtra(DetalhesServicoBuscaActivity.EXTRA_SERVICO_PRICE_KEY, clickedServico.getPreco());
+                        editServicoIntent.putExtra(DetalhesServicoBuscaActivity.EXTRA_SERVICO_BODYREGION_KEY, clickedServico.getAreaCorpo());
+                        editServicoIntent.putExtra(DetalhesServicoBuscaActivity.EXTRA_SERVICO_DURATION_KEY, clickedServico.getDuracao());
+                        editServicoIntent.putExtra(DetalhesServicoBuscaActivity.EXTRA_CLINICA_LOCAL_KEY, clickedServico.getClinica().getMorada());
+                        editServicoIntent.putExtra(DetalhesServicoBuscaActivity.EXTRA_CLINICA_NAME_KEY, clickedServico.getClinica().getNome());
                         startActivity(editServicoIntent);
                     }
                 });
@@ -96,10 +101,21 @@ public class BuscaClienteFragment extends Fragment {
 
             //TODO remove this when we get the database working
             List<Servico> fetchedServicesMock = new ArrayList<>();
-            fetchedServicesMock.add(new Servico("Nome Serviço 1", "Descrição serviço 1"));
-            fetchedServicesMock.add(new Servico("Nome Serviço 2", "Descrição serviço 2"));
-            fetchedServicesMock.add(new Servico("Nome Serviço 3", "Descrição serviço 3"));
-            fetchedServicesMock.add(new Servico("Nome Serviço 4", "Descrição serviço 4"));
+            //lista servicos de cada clinica depois
+
+
+            Clinica clinica = new Clinica( "Clinica 1",  "email1@email",  "rua algo",  "1282378",  "2182918",  "123");
+            clinica.getServicos().add(new Servico("Nome Serviço 1", "Descrição serviço 1", 25.5, 2.0, clinica, "axilas"));
+            clinica.getServicos().add(new Servico("Nome Serviço 2", "Descrição serviço 2", 15.7, 0.6, clinica, "pes"));
+
+            Clinica clinica2 = new Clinica( "Clinica 2",  "email2@email",  "rua algo2",  "1282378",  "2182918",  "123");
+            clinica2.getServicos().add(new Servico("Nome Serviço 1", "Descrição serviço 1", 25.5, 2.0, clinica2, "axilas"));
+            clinica2.getServicos().add(new Servico("Nome Serviço 2", "Descrição serviço 2", 15.7, 0.6, clinica2, "virilha"));
+
+            fetchedServicesMock.add(clinica.getServicos().get(0));
+            fetchedServicesMock.add(clinica.getServicos().get(1));
+            fetchedServicesMock.add(clinica2.getServicos().get(0));
+            fetchedServicesMock.add(clinica2.getServicos().get(1));
 
             return fetchedServicesMock;
         }

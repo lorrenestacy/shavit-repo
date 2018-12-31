@@ -14,6 +14,8 @@ public class ServicoActivity extends AppCompatActivity {
 
     public static final String EXTRA_SERVICO_NAME_KEY = "nameServicoId";
     public static final String EXTRA_SERVICO_DESCRIPTION_KEY = "descriptionServicoId";
+    public static final String EXTRA_SERVICO_PRICE_KEY = "priceServicoId";
+    public static final String EXTRA_SERVICO_DURATION_KEY = "durationServicoId";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
