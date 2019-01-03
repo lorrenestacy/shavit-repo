@@ -4,17 +4,12 @@
     <item
         android:id="@+id/navigation_agendamentos"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="Agenda" />
-
-    <item
-        android:id="@+id/navigation_pedidos"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/pedidos" />
+        android:title="@string/agendamentos" />
 
     <item
         android:id="@+id/navigation_servicos"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="Serviços" />
+        android:title="@string/servicos" />
 
     <item
         android:id="@+id/navigation_perfil"

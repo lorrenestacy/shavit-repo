@@ -1,9 +1,11 @@
 package com.example.lorreneogbonna.shavit.views.fragments;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.lorreneogbonna.shavit.Model.Provedor;
 import com.example.lorreneogbonna.shavit.R;
+import com.example.lorreneogbonna.shavit.views.activities.ServicoActivity;
 import com.example.lorreneogbonna.shavit.views.adapters.ProvedoresAdapter;
 import com.example.lorreneogbonna.shavit.views.utils.OnClickedItem;
 
@@ -44,6 +47,14 @@ public class ProvedoresListClinicaFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         super.onViewCreated(view, savedInstanceState);
+
+        FloatingActionButton btnAddProvedor = getView().findViewById(R.id.btnAddProvedor);
+        btnAddProvedor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Adicionando novo provedor...", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         rvListProvedores = getView().findViewById(R.id.listProvedores);
 
