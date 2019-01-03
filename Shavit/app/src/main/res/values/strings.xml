@@ -40,4 +40,10 @@
     <string name="btnConfirmServico">Confirmar</string>
     <string name="btnConfirm">Confirmar</string>
     <string name="btnCancel">Cancelar</string>
+    <string name="agendamentoHoraDefault">00H00</string>
+    <string name="agendamentoDataDefault">00/00/0000</string>
+    <string name="timeSeparator">-</string>
+    <string name="provedorIndicador">Provedor: </string>
+    <string name="provedorNome">Nome Default</string>
+    <string name="servicoIndicador">Serviço:</string>
 </resources>

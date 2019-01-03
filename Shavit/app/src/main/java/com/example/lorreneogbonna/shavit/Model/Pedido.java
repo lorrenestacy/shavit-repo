@@ -1,6 +1,13 @@
 package com.example.lorreneogbonna.shavit.Model;
 
 public class Pedido {
+
+    private Cliente cliente;
+    private Clinica clinica;
+    private String horario;
+    private String data;
+    private Servico servico;
+
     public Pedido(Cliente cliente, Clinica clinica, String horario, String data, Servico servico) {
         this.cliente = cliente;
         this.clinica = clinica;
@@ -8,11 +15,6 @@ public class Pedido {
         this.data = data;
         this.servico = servico;
     }
-
-    Cliente cliente;
-    Clinica clinica;
-    String horario;
-    String data;
 
     public Cliente getCliente() {
         return cliente;
@@ -53,8 +55,6 @@ public class Pedido {
     public void setServico(Servico servico) {
         this.servico = servico;
     }
-
-    Servico servico;
 
 
 }

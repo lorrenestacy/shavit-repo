@@ -12,7 +12,7 @@ public class Servico {
     private String observacao;
     private double preco;
     private String areaCorpo;
-    Clinica clinica;
+    private Clinica clinica;
 
     public Clinica getClinica() {
         return clinica;
