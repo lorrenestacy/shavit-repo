@@ -18,6 +18,7 @@ import com.example.lorreneogbonna.shavit.Model.Clinica;
 import com.example.lorreneogbonna.shavit.Model.Pedido;
 import com.example.lorreneogbonna.shavit.Model.Servico;
 import com.example.lorreneogbonna.shavit.R;
+import com.example.lorreneogbonna.shavit.views.activities.PedidoAvaliacaoActivity;
 import com.example.lorreneogbonna.shavit.views.activities.PedidoClinicaActivity;
 import com.example.lorreneogbonna.shavit.views.adapters.AgendamentosAdapter;
 import com.example.lorreneogbonna.shavit.views.adapters.PedidoAdapter;
@@ -56,10 +57,7 @@ public class PedidosClinicaFragment extends Fragment {
 
                 Pedido clickedServico = pedidos.get(position);
 
-                Intent editServicoIntent = new Intent(getContext(), PedidoClinicaActivity.class);
-                editServicoIntent.putExtra(PedidosClinicaFragment.EXTRA_SERVICO_NAME_KEY, clickedServico.getData());
-                editServicoIntent.putExtra(PedidosClinicaFragment.EXTRA_SERVICO_DESCRIPTION_KEY, clickedServico.getHorario());
-
+                Intent editServicoIntent = new Intent(getContext(), PedidoAvaliacaoActivity.class);
                 startActivity(editServicoIntent);
             }
         });

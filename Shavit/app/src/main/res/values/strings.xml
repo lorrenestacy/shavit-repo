@@ -47,4 +47,15 @@
     <string name="provedorNome">Provedor Y</string>
     <string name="servicoIndicador">Serviço:</string>
     <string name="servicoNome">Serviço X</string>
+    <string name="nomeCliente">Nome do cliente</string>
+    <string name="horarioDefault">00:00</string>
+    <string name="horarioHint">Horário</string>
+    <string name="nomeClientDefault">Client X</string>
+    <string name="dataHint">Data</string>
+    <string name="dataDefault">XX/YY/ZZZZ</string>
+    <string name="servicoHint">Serviço</string>
+    <string name="provedoresSpinnerPrompt">Provedores...</string>
+    <string name="hintProvedores">Provedor</string>
+    <string name="btnAcceptPedido">Aceitar</string>
+    <string name="btnDecline">Recusar</string>
 </resources>

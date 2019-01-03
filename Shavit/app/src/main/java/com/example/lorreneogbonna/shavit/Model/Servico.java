@@ -8,11 +8,12 @@ public class Servico {
     private String nome;
     private String descricao;
     private double duracao;
-    private List<Provedor> provedores;
     private String observacao;
     private double preco;
     private String areaCorpo;
     private Clinica clinica;
+
+    private List<Provedor> provedores;
 
     public Clinica getClinica() {
         return clinica;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#a8d1cd</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#00574B</color>
+    <color name="colorPrimaryDark">#a8d1cd</color>
     <color name="colorAccent">#D81B60</color>
     <color name="cadastrarbutton">#fdd380</color>
     <color name="logar">#90d1e9</color>
