@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.lorreneogbonna.shavit.Model.Agendamento;
-import com.example.lorreneogbonna.shavit.Model.Provedor;
 import com.example.lorreneogbonna.shavit.R;
 import com.example.lorreneogbonna.shavit.views.utils.OnClickedItem;
 
@@ -39,8 +38,8 @@ public class AgendamentosAdapter extends RecyclerView.Adapter<AgendamentosAdapte
 
         Agendamento agendamento = agendamentos.get(position);
 
-        agendamentoViewHolder.lblAgendamentoData.setText(agendamento.getData());
-        agendamentoViewHolder.lblAgendamentoHora.setText(agendamento.getHorario());
+        agendamentoViewHolder.lblAgendamentoData.setText(agendamento.getPedido().getData());
+        agendamentoViewHolder.lblAgendamentoHora.setText(agendamento.getPedido().getHorario());
     }
 
     @Override

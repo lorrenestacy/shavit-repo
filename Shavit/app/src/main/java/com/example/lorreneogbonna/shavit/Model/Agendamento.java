@@ -1,8 +1,17 @@
 package com.example.lorreneogbonna.shavit.Model;
 
-public class Agendamento extends Pedido{
-    Pedido pedido;
-    Provedor provedor;
+public class Agendamento {
+
+    private Pedido pedido;
+    private Provedor provedor;
+
+    public Agendamento(Cliente cliente, Clinica clinica, String horario, String data, Servico servico) {
+
+        Pedido pedido = new Pedido (cliente, clinica, horario, data, servico);
+        this.pedido = pedido;
+
+        this.provedor = null; //TODO for nwo
+    }
 
     public Pedido getPedido() {
         return pedido;
@@ -20,7 +29,5 @@ public class Agendamento extends Pedido{
         this.provedor = provedor;
     }
 
-    public Agendamento(Cliente cliente, Clinica clinica, String horario, String data, Servico servico) {
-        super(cliente, clinica, horario, data, servico);
-    }
+
 }

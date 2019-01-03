@@ -55,8 +55,10 @@ public class AgendamentosClinicaFragment extends Fragment {
 
                 Intent editServicoIntent = new Intent(getContext(), AgendamentoActivity.class);
 
-                editServicoIntent.putExtra(AgendamentosClinicaFragment.EXTRA_SERVICO_NAME_KEY, clickedAgendamento.getData());
-                editServicoIntent.putExtra(AgendamentosClinicaFragment.EXTRA_SERVICO_DESCRIPTION_KEY, clickedAgendamento.getHorario());
+                editServicoIntent.putExtra(AgendamentosClinicaFragment.EXTRA_SERVICO_NAME_KEY,
+                        clickedAgendamento.getPedido().getData());
+                editServicoIntent.putExtra(AgendamentosClinicaFragment.EXTRA_SERVICO_DESCRIPTION_KEY,
+                        clickedAgendamento.getPedido().getHorario());
 
                 startActivity(editServicoIntent);
             }
