@@ -44,6 +44,7 @@
     <string name="agendamentoDataDefault">00/00/0000</string>
     <string name="timeSeparator">-</string>
     <string name="provedorIndicador">Provedor: </string>
-    <string name="provedorNome">Nome Default</string>
+    <string name="provedorNome">Provedor Y</string>
     <string name="servicoIndicador">Serviço:</string>
+    <string name="servicoNome">Serviço X</string>
 </resources>

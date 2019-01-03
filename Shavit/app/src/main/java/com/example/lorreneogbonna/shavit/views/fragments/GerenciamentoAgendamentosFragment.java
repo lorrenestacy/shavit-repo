@@ -47,7 +47,7 @@ public class GerenciamentoAgendamentosFragment extends Fragment {
         TabPageAdapter tabsPageAdapter = new TabPageAdapter(getChildFragmentManager());
 
         //viewPager's tabs
-        tabsPageAdapter.addFragment(new AgendamentosClinicaFragment(), "Agendamentos Marcados");
+        tabsPageAdapter.addFragment(new AgendamentosClinicaFragment(), "Marcados");
         tabsPageAdapter.addFragment(new PedidosClinicaFragment(), "Pedidos");
 
         viewPager.setAdapter(tabsPageAdapter);

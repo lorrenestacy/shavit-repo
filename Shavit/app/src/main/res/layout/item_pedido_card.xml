@@ -24,25 +24,67 @@
             android:layout_height="match_parent"
             android:padding="15dp">
 
-            <TextView
-                android:id="@+id/lblPedidoHora"
-                android:textColor="@color/colorPrimary"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:paddingBottom="4dp"
-                android:text="@string/nomeProvedorDefault"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:id="@+id/pedidoDataLayoutWrapper">
 
-            <TextView
-                android:id="@+id/lblPedidoData"
+                <TextView
+                    android:id="@+id/lblPedidoData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/agendamentoDataDefault"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="24sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:text="@string/timeSeparator"
+                    android:layout_marginHorizontal="4sp"/>
+
+                <TextView
+                    android:id="@+id/lblPedidoHora"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/agendamentoHoraDefault"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/lblNomeProvedor"
-                android:text="@string/telefoneProvedorDefault"
-                android:textSize="18sp" />
+                android:orientation="horizontal"
+                android:paddingBottom="2dp"
+                android:id="@+id/provedorLayoutWrapper"
+                android:layout_below="@id/pedidoDataLayoutWrapper">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/servicoIndicador"
+                    android:textSize="18sp"
+                    android:layout_marginRight="2sp"
+                    android:layout_marginEnd="4sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/lblNomeServicoListaPedidos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/servicoNome"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
 
         </RelativeLayout>
 
