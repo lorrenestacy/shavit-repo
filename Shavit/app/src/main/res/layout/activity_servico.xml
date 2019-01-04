@@ -102,13 +102,9 @@
                     android:id="@+id/btnAddServicoEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/btnConfirm"/>
+                    android:text="@string/btnConfirm"
 
-                <Button
-                    android:id="@+id/btnCancelServicoEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/btnCancel"/>
+                    style="@style/ButtonTheme"/>
 
             </LinearLayout>
 

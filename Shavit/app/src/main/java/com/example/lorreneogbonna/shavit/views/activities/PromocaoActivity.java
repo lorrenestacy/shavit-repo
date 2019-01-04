@@ -25,7 +25,6 @@ public class PromocaoActivity extends AppCompatActivity {
         EditText txtServicoNameText = findViewById(R.id.txtNomeServico);
         EditText txtServicoDescriptionText = findViewById(R.id.txtDescricaoServico);
         Button btnConfirm = findViewById(R.id.btnAddServicoEdit);
-        Button btnCancel = findViewById(R.id.btnCancelServicoEdit);
 
         //getting possible values for intent
         Intent intent = getIntent();
@@ -45,13 +44,6 @@ public class PromocaoActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
 
                 //just going back to parent activity
-                finish();
-            }
-        });
-
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 finish();
             }
         });

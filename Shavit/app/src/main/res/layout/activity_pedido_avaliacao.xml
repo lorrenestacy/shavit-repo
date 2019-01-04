@@ -122,19 +122,18 @@
                     android:id="@+id/activityPedidoAvaliacao_btnAceitarPedido"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/btnAcceptPedido"/>
+                    android:text="@string/btnAcceptPedido"
+
+                    style="@style/ButtonTheme"/>
 
                 <Button
                     android:id="@+id/activityPedidoAvaliacao_btnDeclinePedido"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/btnDecline"/>
+                    android:layout_marginTop="5dp"
+                    android:text="@string/btnDecline"
 
-                <Button
-                    android:id="@+id/activityPedidoAvaliacao_btnCancelPedido"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/btnCancel"/>
+                    style="@style/ButtonTheme"/>
 
             </LinearLayout>
 

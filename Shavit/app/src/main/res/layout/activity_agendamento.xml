@@ -131,19 +131,18 @@
                     android:id="@+id/activityAgendamento_realizado"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/btnRealizadoText"/>
+                    android:text="@string/btnRealizadoText"
+
+                    style="@style/ButtonTheme"/>
 
                 <Button
                     android:id="@+id/activityAgendamento_btnCancelarAgendamentoClinica"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/btnCancelarAgendamentoClinicaText"/>
+                    android:layout_marginTop="5dp"
+                    android:text="@string/btnCancelarAgendamentoClinicaText"
 
-                <Button
-                    android:id="@+id/activityAgendamento_btnCancel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/btnBackText"/>
+                    style="@style/ButtonTheme"/>
 
             </LinearLayout>
             

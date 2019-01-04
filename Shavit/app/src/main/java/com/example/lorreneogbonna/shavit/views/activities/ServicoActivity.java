@@ -27,7 +27,6 @@ public class ServicoActivity extends AppCompatActivity {
         EditText txtServicoNameText = findViewById(R.id.txtNomeServico);
         EditText txtServicoDescriptionText = findViewById(R.id.txtDescricaoServico);
         Button btnConfirm = findViewById(R.id.btnAddServicoEdit);
-        Button btnCancel = findViewById(R.id.btnCancelServicoEdit);
 
         //getting possible values for intent
         Intent intent = getIntent();
@@ -50,14 +49,6 @@ public class ServicoActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
 
     }
 
