@@ -58,4 +58,7 @@
     <string name="hintProvedores">Provedor</string>
     <string name="btnAcceptPedido">Aceitar</string>
     <string name="btnDecline">Recusar</string>
+    <string name="duracaoEmMinutosHint">Duração (em minutos)</string>
+    <string name="observacaoHint">Observação</string>
+    <string name="precoHint">Preço (€)</string>
 </resources>
