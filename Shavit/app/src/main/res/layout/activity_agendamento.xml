@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".views.activities.PedidoAvaliacaoActivity"
 
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".views.activities.AgendamentoActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,7 +25,7 @@
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/activityPedidoAvaliacao_txtNomeCliente"
+                    android:id="@+id/activityAgendamento_txtCliente"
                     android:inputType="text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -44,7 +45,7 @@
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/activityPedidoAvaliacao_txtData"
+                    android:id="@+id/activityAgendamento_txtData"
                     android:inputType="none"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -64,7 +65,7 @@
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/activityPedidoAvaliacao_txtHorario"
+                    android:id="@+id/activityAgendamento_txtHorario"
                     android:inputType="none"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -84,7 +85,7 @@
                 android:layout_marginTop="10dp">
 
                 <EditText
-                    android:id="@+id/activityPedidoAvaliacao_txtServico"
+                    android:id="@+id/activityAgendamento_txtServico"
                     android:inputType="none"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -98,19 +99,27 @@
 
             </android.support.design.widget.TextInputLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextAppearance.AppCompat.Caption"
-                android:text="@string/hintProvedores"
-                android:layout_marginTop="10dp"/>
-
-            <Spinner
-                android:id="@+id/activityPedidoAvaliacao_spinnerProvedor"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:prompt="@string/provedoresSpinnerPrompt" />
+                android:layout_marginTop="10dp">
 
+                <EditText
+                    android:id="@+id/activityAgendamento_txtProvedor"
+                    android:inputType="text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nomeProvedorHint"
+                    android:text="@string/nomeProvedorDefault"
+
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+
+            </android.support.design.widget.TextInputLayout>
+            
+            <!-- buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -119,25 +128,25 @@
                 android:layout_marginBottom="20dp">
 
                 <Button
-                    android:id="@+id/activityPedidoAvaliacao_btnAceitarPedido"
+                    android:id="@+id/activityAgendamento_realizado"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/btnAcceptPedido"/>
+                    android:text="@string/btnRealizadoText"/>
 
                 <Button
-                    android:id="@+id/activityPedidoAvaliacao_btnDeclinePedido"
+                    android:id="@+id/activityAgendamento_btnCancelarAgendamentoClinica"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/btnDecline"/>
+                    android:text="@string/btnCancelarAgendamentoClinicaText"/>
 
                 <Button
-                    android:id="@+id/activityPedidoAvaliacao_btnCancelPedido"
+                    android:id="@+id/activityAgendamento_btnCancel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/btnCancel"/>
+                    android:text="@string/btnBackText"/>
 
             </LinearLayout>
-
+            
         </LinearLayout>
 
     </ScrollView>

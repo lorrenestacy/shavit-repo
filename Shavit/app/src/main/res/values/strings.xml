@@ -61,4 +61,10 @@
     <string name="duracaoEmMinutosHint">Duração (em minutos)</string>
     <string name="observacaoHint">Observação</string>
     <string name="precoHint">Preço (€)</string>
+    <string name="btnRealizadoText">Marcar Como Realizado</string>
+    <string name="btnCancelarAgendamentoClinica">Cancelar Agendamento</string>
+    <string name="btnCancelarAgendamentoClinicaText">Cancelar Agendamento</string>
+    <string name="btnCancelText">Voltar</string>
+    <string name="btnBackText">Voltar</string>
+    <string name="nomeProvedorHint">Provedor</string>
 </resources>
