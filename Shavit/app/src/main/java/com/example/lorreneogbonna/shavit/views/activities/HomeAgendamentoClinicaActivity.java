@@ -21,7 +21,7 @@ public class HomeAgendamentoClinicaActivity extends AppCompatActivity {
     private Fragment fragmentAgendamentos = new GerenciamentoAgendamentosFragment();
     private Fragment fragmentServicos = new ServicosFragment();
     private Fragment fragmentPefil = new PerfilClinicaFragment();
-    String nomeUsuario, moradaUsuario, emailUsuario, telefoneUsuario, nifUsuario;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -32,11 +32,13 @@ public class HomeAgendamentoClinicaActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationSelectionItemListener());
 
         Bundle extras = getIntent().getExtras();
-        nomeUsuario = extras.getString("nomeUsuario");
-        moradaUsuario = extras.getString("moradaUsuario");
-        emailUsuario = extras.getString("emailUsuario");
-        telefoneUsuario = extras.getString("telefoneUsuario");
-        nifUsuario = extras.getString("nifUsuario");
+
+        //TODO this is not the best way to go about this. So, for now, the user will be just a placeholder
+//        nomeUsuario = extras.getString("nomeUsuario");
+//        moradaUsuario = extras.getString("moradaUsuario");
+//        emailUsuario = extras.getString("emailUsuario");
+//        telefoneUsuario = extras.getString("telefoneUsuario");
+//        nifUsuario = extras.getString("nifUsuario");
 
         //loading initial fragment
         loadFragment(fragmentAgendamentos);
@@ -59,11 +61,11 @@ public class HomeAgendamentoClinicaActivity extends AppCompatActivity {
 
                 case R.id.navigation_perfil:
                     Bundle bundle = new Bundle();
-                    bundle.putString("nomeUsuario", nomeUsuario);
-                    bundle.putString("moradaUsuario", moradaUsuario);
-                    bundle.putString("emailUsuario", emailUsuario);
-                    bundle.putString("telefoneUsuario", telefoneUsuario);
-                    bundle.putString("nifUsuario", nifUsuario);
+                    bundle.putString("nomeUsuario", "user");
+                    bundle.putString("moradaUsuario", "morada");
+                    bundle.putString("emailUsuario", "email");
+                    bundle.putString("telefoneUsuario", "telefone");
+                    bundle.putString("nifUsuario", "nif");
 
                     fragmentPefil.setArguments(bundle);
                     loadFragment(fragmentPefil);

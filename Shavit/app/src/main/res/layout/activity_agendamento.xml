@@ -118,7 +118,7 @@
                     android:focusableInTouchMode="false"/>
 
             </android.support.design.widget.TextInputLayout>
-            
+
             <!-- buttons -->
             <LinearLayout
                 android:layout_width="match_parent"

@@ -14,7 +14,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
         <activity
             android:name=".views.activities.LoginActivity"
             android:label="Shavit Login">
@@ -23,27 +29,37 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".views.activities.HomeAgendamentoClinicaActivity"
-            android:label="Shavit Home" />
-        <activity
-            android:name=".views.activities.CadastroActivity"
-            android:label="Shavit Cadastro" />
+
+        <activity android:name=".views.activities.CadastroActivity" />
         <activity android:name=".views.activities.PedidoClinicaActivity" />
         <activity android:name=".views.activities.HomeBuscarClienteActivity" />
-        <activity android:name=".views.activities.AgendamentoActivity" />
-        <activity android:name=".views.activities.ServicoActivity">
+        <activity android:name=".views.activities.DetalhesServicoBuscaActivity" />
+
+        <activity android:name=".views.activities.HomeAgendamentoClinicaActivity"
+                  android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".views.activities.AgendamentoActivity"
+                  android:label="Agendamento">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".views.activities.HomeAgendamentoClinicaActivity" />
         </activity>
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+        <activity android:name=".views.activities.ServicoActivity"
+            android:label="Serviço">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.activities.HomeAgendamentoClinicaActivity" />
+        </activity>
 
-        <activity android:name=".views.activities.DetalhesServicoBuscaActivity" />
-        <activity android:name=".views.activities.PedidoAvaliacaoActivity"></activity>
+        <activity
+            android:name=".views.activities.PedidoAvaliacaoActivity"
+            android:label="Pedido">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.activities.HomeAgendamentoClinicaActivity" />
+        </activity>
+
     </application>
 
 </manifest>
