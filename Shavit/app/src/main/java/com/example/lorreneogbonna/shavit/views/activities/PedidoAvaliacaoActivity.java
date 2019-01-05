@@ -49,7 +49,7 @@ public class PedidoAvaliacaoActivity extends AppCompatActivity {
 
     private void setupSpinnerWithProvedores (List<Provedor> provedores) {
 
-        ArrayAdapter provedoresAdapter = new ArrayAdapter(this, R.layout.spinner_item, provedores);
+        ArrayAdapter provedoresAdapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, provedores);
         spinnerProvedores.setAdapter(provedoresAdapter);
     }
 

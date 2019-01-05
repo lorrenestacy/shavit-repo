@@ -27,7 +27,7 @@
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/activityPedidoAvaliacao_txtNomeCliente"
-                    android:inputType="text"
+                    android:inputType="textNoSuggestions"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/nomeCliente"
@@ -50,7 +50,7 @@
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/activityPedidoAvaliacao_txtData"
-                    android:inputType="none"
+                    android:inputType="textNoSuggestions"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/dataHint"
@@ -73,7 +73,7 @@
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/activityPedidoAvaliacao_txtHorario"
-                    android:inputType="none"
+                    android:inputType="textNoSuggestions"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/horarioHint"
@@ -96,7 +96,7 @@
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/activityPedidoAvaliacao_txtServico"
-                    android:inputType="none"
+                    android:inputType="textNoSuggestions"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/servicoHint"

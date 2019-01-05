@@ -17,12 +17,13 @@
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btnAddProvedor"
         android:layout_width="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="10sp"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         app:srcCompat="@drawable/ic_add_white_24dp"
-        tools:ignore="VectorDrawableCompat" />
+        tools:ignore="VectorDrawableCompat"
+        app:useCompatPadding="true"/>
 
 </RelativeLayout>
