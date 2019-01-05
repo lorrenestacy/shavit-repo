@@ -3,7 +3,11 @@
     <color name="colorPrimary">#253da2</color>
     <color name="colorPrimaryDark">#072082</color>
     <color name="colorAccent">#d5cb21</color>
+    <color name="sad">#abc123</color>
+
+    <color name="grayInputTextFields">#eee</color>
 
     <color name="cadastrarbutton">#fdd380</color>
     <color name="logar">#90d1e9</color>
+
 </resources>
