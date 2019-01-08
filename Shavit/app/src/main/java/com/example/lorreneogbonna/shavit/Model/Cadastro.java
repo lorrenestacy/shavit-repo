@@ -1,12 +1,13 @@
 package com.example.lorreneogbonna.shavit.Model;
 
 public class Cadastro {
-    String nome;
-    String email; //colocar regez de validaçao
-    String morada;
-    String telefone;
-    String nif;
-    String password;
+
+    private String nome;
+    private String email; //colocar regez de validaçao
+    private String morada;
+    private String telefone;
+    private String nif;
+    private String password;
 
     public Cadastro(String nome, String email, String morada, String telefone, String nif, String password) {
         this.nome = nome;

@@ -3,170 +3,164 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.fragments.PerfilClinicaFragment">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-            <TextView
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <!-- name -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/fragmentoPerfilClinica_nomeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="center"
-                android:text="Perfil"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/textsPerfilClinica">
-            <TextView
-                android:id="@+id/nomePerfilClinica"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nome:" />
-
-            <TextView
-                android:id="@+id/emailPerfilClinica"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Email:" />
-
-            <TextView
-                android:id="@+id/descricaoPerfilClinica"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Descrição:" />
-
-            <TextView
-                android:id="@+id/nifPerfilClinica"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="NIf:" />
-
-            <TextView
-                android:id="@+id/fonePerfilClinica"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Fone:" />
-
-            <TextView
-                android:id="@+id/moradaPerfilClinica"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Morada:" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/inputsEditarClinica"
-            android:visibility="gone">
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                app:boxBackgroundColor="@color/grayInputTextFields">
 
                 <android.support.design.widget.TextInputEditText
+                    android:id="@+id/fragmentoPerfilClinica_nome"
+                    android:inputType="textPersonName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nome" />
+                    android:hint="@string/nomePerfil"
+
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+
             </android.support.design.widget.TextInputLayout>
 
+            <!-- email -->
             <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Email" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Descrição" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Nif" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Fone" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Morada" />
-            </android.support.design.widget.TextInputLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/perfilButtons">
-        <Button
-            android:id="@+id/logoutClinica"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:layout_weight="1"/>
-            <Button
-                android:id="@+id/editarClinica"
+                android:id="@+id/fragmentoPerfilClinica_emailLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Editar"
-                android:layout_weight="1"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:id="@+id/editarPerfilButtons"
-            android:visibility="gone">
-            <Button
-                android:id="@+id/cancelarEditar"
+                android:layout_marginTop="10dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                app:boxBackgroundColor="@color/grayInputTextFields">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/fragmentoPerfilClinica_email"
+                    android:inputType="textEmailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/emailPerfil"
+
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- morada -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/fragmentoPerfilClinica_moradaLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cancelar"
-                android:layout_weight="1"/>
-            <Button
-                android:id="@+id/salvarEditar"
+                android:layout_marginTop="10dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                app:boxBackgroundColor="@color/grayInputTextFields">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/fragmentoPerfilClinica_morada"
+                    android:inputType="textPostalAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/moradaPerfil"
+
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- nif -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/fragmentoPerfilClinica_nifLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Salvar"
-                android:layout_weight="1"/>
+                android:layout_marginTop="10dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                app:boxBackgroundColor="@color/grayInputTextFields">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/fragmentoPerfilClinica_nif"
+                    android:inputType="number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nifPerfil"
+
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- fone -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/fragmentoPerfilClinica_foneLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                app:boxBackgroundColor="@color/grayInputTextFields">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/fragmentoPerfilClinica_fone"
+                    android:inputType="phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/fonePerfil"
+
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp">
+
+                <Button
+                    android:id="@+id/fragmentoPerfilClinica_confirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btnEdit"
+
+                    style="@style/ButtonTheme"/>
+
+                <Button
+                    android:id="@+id/fragmentoPerfilClinica_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/btnLogout"
+
+                    style="@style/ButtonTheme"/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
 
 </FrameLayout>

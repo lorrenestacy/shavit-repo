@@ -67,4 +67,11 @@
     <string name="btnCancelText">Voltar</string>
     <string name="btnBackText">Voltar</string>
     <string name="nomeProvedorHint">Provedor</string>
+    <string name="nomePerfil">Nome</string>
+    <string name="btnLogout">Logout</string>
+    <string name="btnEdit">Editar/Concluir</string>
+    <string name="emailPerfil">Email</string>
+    <string name="moradaPerfil">Morada</string>
+    <string name="nifPerfil">NIF</string>
+    <string name="fonePerfil">Telefone</string>
 </resources>
