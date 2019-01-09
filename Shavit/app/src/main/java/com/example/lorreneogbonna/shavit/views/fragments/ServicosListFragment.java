@@ -14,21 +14,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.lorreneogbonna.shavit.Model.Clinica;
 import com.example.lorreneogbonna.shavit.Model.Servico;
 import com.example.lorreneogbonna.shavit.R;
+import com.example.lorreneogbonna.shavit.apiconsuming.ApiClient;
+import com.example.lorreneogbonna.shavit.apiconsuming.dto.ServicoDTO;
+import com.example.lorreneogbonna.shavit.apiconsuming.interfaces.ServicoApi;
 import com.example.lorreneogbonna.shavit.views.activities.ServicoActivity;
 import com.example.lorreneogbonna.shavit.views.adapters.ServicosAdapter;
 import com.example.lorreneogbonna.shavit.views.utils.OnClickedItem;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
 
 public class ServicosListFragment extends Fragment {
 
     private List<Servico> servicos;
     private ServicosAdapter servicosAdapter;
     private RecyclerView listServicos;
+
+    private ServicoApi servicoApi;
 
     public ServicosListFragment() {
         servicos = new ArrayList<>();
@@ -38,6 +46,8 @@ public class ServicosListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
+
+        servicoApi = ApiClient.getClient().create(ServicoApi.class);
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_servicos_list, container, false);
@@ -87,15 +97,15 @@ public class ServicosListFragment extends Fragment {
         @Override
         protected List<Servico> doInBackground(Void... voids) {
 
-            //TODO remove this when we get the database working
-            List<Servico> fetchedServicesMock = new ArrayList<>();
-            Clinica clinica = new Clinica( "Clinica 1",  "email1@email",  "rua algo",  "1282378",  "2182918",  "123");
-            fetchedServicesMock.add(new Servico("Nome Serviço 1", "Descrição serviço 1", 18.5, 1.5, clinica, "virilha"));
-            fetchedServicesMock.add(new Servico("Nome Serviço 2", "Descrição serviço 2", 15.7, 0.6, clinica, "buco"));
-            fetchedServicesMock.add(new Servico("Nome Serviço 3", "Descrição serviço 3", 35.6, 2.5, clinica, "coxa"));
-            fetchedServicesMock.add(new Servico("Nome Serviço 4", "Descrição serviço 4", 25.9, 1.5, clinica, "costas"));
+            Call<List<ServicoDTO>> listServicoCall = servicoApi.getListServicos();
+            try {
+                List<ServicoDTO> apiResult = listServicoCall.execute().body();
+                return convertToEntities(apiResult);
 
-            return fetchedServicesMock;
+            } catch (IOException e) {
+                e.printStackTrace();
+                throw new RuntimeException("Error while trying to fetch Serviços");
+            }
         }
 
         @Override
@@ -114,4 +124,15 @@ public class ServicosListFragment extends Fragment {
 
         }
     }
+
+    private List<Servico> convertToEntities (List<ServicoDTO> dtos) {
+
+        List<Servico> entities = new ArrayList<>();
+        for (ServicoDTO dto : dtos) {
+            entities.add(dto.convertToEntity());
+        }
+
+        return entities;
+    }
+
 }

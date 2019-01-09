@@ -23,6 +23,10 @@ public class Servico {
         return areaCorpo;
     }
 
+    public Servico () {
+
+    }
+
     //For the purposes of demonstrating the behaviour of the list, the only things we care about
     public Servico (String nome, String descricao, double preco, double duracao, Clinica clinica, String areaCorpo) {
         this.nome = nome;

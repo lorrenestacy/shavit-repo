@@ -9,6 +9,8 @@ public class Provedor {
     private String telefone;
     private List<Servico> servicos;
 
+    public Provedor () { }
+
     public Provedor (String nome, String telefone) {
         this.nome = nome;
         this.telefone = telefone;
