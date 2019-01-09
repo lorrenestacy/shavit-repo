@@ -18,14 +18,22 @@ import com.example.lorreneogbonna.shavit.Model.Clinica;
 import com.example.lorreneogbonna.shavit.Model.Pedido;
 import com.example.lorreneogbonna.shavit.Model.Servico;
 import com.example.lorreneogbonna.shavit.R;
+import com.example.lorreneogbonna.shavit.apiconsuming.ApiClient;
+import com.example.lorreneogbonna.shavit.apiconsuming.dto.PedidoDTO;
+import com.example.lorreneogbonna.shavit.apiconsuming.dto.ServicoDTO;
+import com.example.lorreneogbonna.shavit.apiconsuming.interfaces.PedidoApi;
 import com.example.lorreneogbonna.shavit.views.activities.PedidoAvaliacaoActivity;
 import com.example.lorreneogbonna.shavit.views.activities.PedidoClinicaActivity;
 import com.example.lorreneogbonna.shavit.views.adapters.AgendamentosAdapter;
 import com.example.lorreneogbonna.shavit.views.adapters.PedidoAdapter;
 import com.example.lorreneogbonna.shavit.views.utils.OnClickedItem;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Retrofit;
 
 public class PedidosClinicaFragment extends Fragment {
     private static final String EXTRA_SERVICO_NAME_KEY = "agendamentoId";
@@ -33,7 +41,9 @@ public class PedidosClinicaFragment extends Fragment {
     private List<Pedido> pedidos;
     private PedidoAdapter pedidosAdapter;
     private RecyclerView listPedidos;
-    View view;
+    private View view;
+
+    private PedidoApi pedidoApi;
 
     public PedidosClinicaFragment() {
         // Required empty public constructor
@@ -44,8 +54,10 @@ public class PedidosClinicaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_pedidos_clinica, container, false);
 
+        pedidoApi = ApiClient.getClient().create(PedidoApi.class);
 
         //carregar lista
         listPedidos = view.findViewById(R.id.tabsListPedidoClinica);
@@ -75,20 +87,15 @@ public class PedidosClinicaFragment extends Fragment {
 
         @Override
         protected List<Pedido> doInBackground(Void... voids) {
-            Cliente cliente = new Cliente("lo", "lo@com.pt", 20, "rua de la", "36762789", "38237827", "123");
-            Clinica clinica = new Clinica("minha stetic", "stetic@gmail.com", "rua de la", "738273283", "7832782", "123");
-            Servico servico = new Servico("Nome Serviço 4", "Descrição serviço 4", 25.9, 1.5, clinica, "costas");
+            Call<List<PedidoDTO>> listPedidoCall = pedidoApi.getListPedidosSolicitados();
+            try {
+                List<PedidoDTO> apiResult = listPedidoCall.execute().body();
+                return convertToEntities(apiResult);
 
-            //pegar a referencia da propria clinica dps
-
-            //TODO remove this when we get the database working
-            List<Pedido> fetchedPedidosMock = new ArrayList<>();
-            fetchedPedidosMock.add(new Pedido(cliente, clinica, "00:00", "10/10/10", servico));
-            fetchedPedidosMock.add(new Pedido(cliente, clinica, "00:00", "10/10/10", servico));
-            fetchedPedidosMock.add(new Pedido(cliente, clinica, "00:00", "10/10/10", servico));
-            fetchedPedidosMock.add(new Pedido(cliente, clinica, "00:00", "10/10/10", servico));
-
-            return fetchedPedidosMock;
+            } catch (IOException e) {
+                e.printStackTrace();
+                throw new RuntimeException("Error while trying to fetch Serviços");
+            }
         }
 
         @Override
@@ -106,6 +113,16 @@ public class PedidosClinicaFragment extends Fragment {
             pedidosAdapter.notifyItemRangeInserted(0, pedidos.size());
 
         }
+    }
+
+    private List<Pedido> convertToEntities (List<PedidoDTO> dtos) {
+
+        List<Pedido> entities = new ArrayList<>();
+        for (PedidoDTO dto : dtos) {
+            entities.add(dto.convertToPedido());
+        }
+
+        return entities;
     }
 
 }

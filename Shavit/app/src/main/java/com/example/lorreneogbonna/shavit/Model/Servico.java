@@ -1,8 +1,9 @@
 package com.example.lorreneogbonna.shavit.Model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Servico {
+public class Servico implements Serializable {
 
     private String tipo;
     private String nome;

@@ -41,6 +41,7 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.PedidoView
 
         pedidoViewHolder.lblPedidoData.setText(pedido.getData());
         pedidoViewHolder.lblPedidoHora.setText(pedido.getHorario());
+        pedidoViewHolder.lblNomeServico.setText(pedido.getServico().getNome());
     }
 
     @Override
@@ -52,6 +53,7 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.PedidoView
 
         private TextView lblPedidoData;
         private TextView lblPedidoHora;
+        private TextView lblNomeServico;
 
         public PedidoViewHolder(@NonNull View itemView) {
 
@@ -59,6 +61,7 @@ public class PedidoAdapter extends RecyclerView.Adapter<PedidoAdapter.PedidoView
 
             lblPedidoData = itemView.findViewById(R.id.lblPedidoData);
             lblPedidoHora = itemView.findViewById(R.id.lblPedidoHora);
+            lblNomeServico = itemView.findViewById(R.id.lblNomeServicoListaPedidos);
 
             itemView.setOnClickListener(this);
         }

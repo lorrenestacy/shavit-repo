@@ -8,9 +8,20 @@ public class Pedido {
     private String data;
     private Servico servico;
 
+    public Pedido () {
+
+    }
+
     public Pedido(Cliente cliente, Clinica clinica, String horario, String data, Servico servico) {
         this.cliente = cliente;
         this.clinica = clinica;
+        this.horario = horario;
+        this.data = data;
+        this.servico = servico;
+    }
+
+    public Pedido(Cliente cliente, String horario, String data, Servico servico) {
+        this.cliente = cliente;
         this.horario = horario;
         this.data = data;
         this.servico = servico;

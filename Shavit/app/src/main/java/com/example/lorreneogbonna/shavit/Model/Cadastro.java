@@ -9,6 +9,10 @@ public class Cadastro {
     private String nif;
     private String password;
 
+    public Cadastro () {
+
+    }
+
     public Cadastro(String nome, String email, String morada, String telefone, String nif, String password) {
         this.nome = nome;
         this.email = email;

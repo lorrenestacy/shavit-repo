@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente extends Cadastro {
+
     List<Agendamento> agendamentos;
     List<Pedido> pedidos;
     int idade;
@@ -14,6 +15,10 @@ public class Cliente extends Cadastro {
 
     public int getIdade() {
         return idade;
+
+    }
+
+    public Cliente () {
 
     }
 

@@ -8,15 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.lorreneogbonna.shavit.Model.Servico;
 import com.example.lorreneogbonna.shavit.R;
 
 public class ServicoActivity extends AppCompatActivity {
 
-    public static final String EXTRA_SERVICO_NAME_KEY = "nameServicoId";
-    public static final String EXTRA_SERVICO_DESCRIPTION_KEY = "descriptionServicoId";
-    public static final String EXTRA_SERVICO_PRICE_KEY = "priceServicoId";
-    public static final String EXTRA_SERVICO_DURATION_KEY = "durationServicoId";
-
+    public static final String EXTRA_SERVICO_KEY = "servicoKeyExtra";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -30,11 +27,12 @@ public class ServicoActivity extends AppCompatActivity {
 
         //getting possible values for intent
         Intent intent = getIntent();
-        String nameService = intent.getStringExtra(ServicoActivity.EXTRA_SERVICO_NAME_KEY);
-        String descriptionService = intent.getStringExtra(ServicoActivity.EXTRA_SERVICO_DESCRIPTION_KEY);
+        Servico servico = (Servico) intent.getSerializableExtra(EXTRA_SERVICO_KEY);
 
-        txtServicoNameText.setText(nameService == null ? "" : nameService);
-        txtServicoDescriptionText.setText(descriptionService == null ? "" : descriptionService);
+        txtServicoNameText.setText(servico.getNome() == null ? "" : servico.getNome());
+        txtServicoDescriptionText.setText(servico.getDescricao() == null ? "" : servico.getDescricao());
+
+        //set all fields
 
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override

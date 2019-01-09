@@ -76,10 +76,11 @@ public class ServicosListFragment extends Fragment {
 
                 Servico clickedServico = servicos.get(position);
 
-                Intent editServicoIntent = new Intent(getContext(), ServicoActivity.class);
-                editServicoIntent.putExtra(ServicoActivity.EXTRA_SERVICO_NAME_KEY, clickedServico.getNome());
-                editServicoIntent.putExtra(ServicoActivity.EXTRA_SERVICO_DESCRIPTION_KEY, clickedServico.getDescricao());
+                Bundle extras = new Bundle();
+                extras.putSerializable(ServicoActivity.EXTRA_SERVICO_KEY, clickedServico);
 
+                Intent editServicoIntent = new Intent(getContext(), ServicoActivity.class);
+                editServicoIntent.putExtras(extras);
                 startActivity(editServicoIntent);
             }
         });
