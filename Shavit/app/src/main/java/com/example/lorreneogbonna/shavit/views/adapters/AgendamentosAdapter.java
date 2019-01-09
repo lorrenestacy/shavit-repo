@@ -40,6 +40,8 @@ public class AgendamentosAdapter extends RecyclerView.Adapter<AgendamentosAdapte
 
         agendamentoViewHolder.lblAgendamentoData.setText(agendamento.getPedido().getData());
         agendamentoViewHolder.lblAgendamentoHora.setText(agendamento.getPedido().getHorario());
+        agendamentoViewHolder.lblNomeProvedor.setText(agendamento.getProvedor().getNome());
+        agendamentoViewHolder.lblNomeServico.setText(agendamento.getPedido().getServico().getNome());
     }
 
     @Override
@@ -51,6 +53,8 @@ public class AgendamentosAdapter extends RecyclerView.Adapter<AgendamentosAdapte
 
         private TextView lblAgendamentoData;
         private TextView lblAgendamentoHora;
+        private TextView lblNomeProvedor;
+        private TextView lblNomeServico;
 
         public AgendamentoViewHolder(@NonNull View itemView) {
 
@@ -58,6 +62,8 @@ public class AgendamentosAdapter extends RecyclerView.Adapter<AgendamentosAdapte
 
             lblAgendamentoData = itemView.findViewById(R.id.lblAgendamentoHora);
             lblAgendamentoHora = itemView.findViewById(R.id.lblAgendamentoData);
+            lblNomeProvedor = itemView.findViewById(R.id.lblNomeProvedorListaAgendamento);
+            lblNomeServico = itemView.findViewById(R.id.lblNomeServicoListaAgendamento);
 
             itemView.setOnClickListener(this);
         }

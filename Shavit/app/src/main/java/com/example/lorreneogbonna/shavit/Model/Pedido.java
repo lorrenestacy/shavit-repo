@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Pedido implements Serializable {
 
+    private Long id;
     private Cliente cliente;
     private Clinica clinica;
     private String horario;
@@ -69,5 +70,11 @@ public class Pedido implements Serializable {
         this.servico = servico;
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

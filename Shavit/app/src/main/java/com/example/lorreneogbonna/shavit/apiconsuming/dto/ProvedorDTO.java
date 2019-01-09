@@ -23,6 +23,7 @@ public class ProvedorDTO {
         Provedor provedor = new Provedor();
         provedor.setNome(this.nome);
         provedor.setTelefone(this.telefone);
+        provedor.setId(this.id);
 
         return provedor;
     }

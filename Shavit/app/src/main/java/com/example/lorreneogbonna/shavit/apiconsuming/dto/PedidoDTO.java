@@ -37,6 +37,7 @@ public class PedidoDTO {
         pedido.setServico(this.servico.convertToEntity());
         pedido.setData(this.data);
         pedido.setHorario(this.hora);
+        pedido.setId(this.id);
 
         return pedido;
     }

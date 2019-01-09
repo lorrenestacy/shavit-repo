@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -37,6 +38,7 @@ public class AgendamentosClinicaFragment extends Fragment {
     private AgendamentosAdapter agendamentosAdapter;
     private RecyclerView listAgendamentos;
     private View view;
+    private SwipeRefreshLayout refresh;
 
     private PedidoApi pedidoApi;
 
@@ -55,6 +57,14 @@ public class AgendamentosClinicaFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_agendamentos_clinica, container, false);
         // Inflate the layout for this fragment
 
+        refresh = view.findViewById(R.id.agendamntosClinica_refresh);
+        refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new AgendamentosClinicaFragment.LoadServicos().execute();
+            }
+        });
+
         //carregar lista
         listAgendamentos = view.findViewById(R.id.tabsListAgendamentosClinica);
 
@@ -65,13 +75,12 @@ public class AgendamentosClinicaFragment extends Fragment {
 
                 Agendamento clickedAgendamento = agendamentos.get(position);
 
+
+                Bundle extra = new Bundle();
+                extra.putSerializable(AgendamentoActivity.AGENDAMENTO_KEY, clickedAgendamento);
+
                 Intent editServicoIntent = new Intent(getContext(), AgendamentoActivity.class);
-
-                editServicoIntent.putExtra(AgendamentosClinicaFragment.EXTRA_SERVICO_NAME_KEY,
-                        clickedAgendamento.getPedido().getData());
-                editServicoIntent.putExtra(AgendamentosClinicaFragment.EXTRA_SERVICO_DESCRIPTION_KEY,
-                        clickedAgendamento.getPedido().getHorario());
-
+                editServicoIntent.putExtras(extra);
                 startActivity(editServicoIntent);
             }
         });
@@ -115,6 +124,7 @@ public class AgendamentosClinicaFragment extends Fragment {
             agendamentosAdapter.notifyItemRangeRemoved(0, listCurrentSize);
             agendamentosAdapter.notifyItemRangeInserted(0, agendamentos.size());
 
+            refresh.setRefreshing(false);
         }
     }
 

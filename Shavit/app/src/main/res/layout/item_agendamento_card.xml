@@ -32,13 +32,13 @@
                 android:id="@+id/agendamentoDataLayoutWrapper">
 
                 <TextView
-                    android:id="@+id/lblAgendamentoData"
+                    android:id="@+id/lblAgendamentoHora"
+                    android:textColor="@color/colorPrimary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/agendamentoDataDefault"
-                    android:textColor="@color/colorPrimary"
+                    android:text="@string/agendamentoHoraDefault"
                     android:textSize="24sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -49,14 +49,15 @@
                     android:text="@string/timeSeparator"
                     android:layout_marginHorizontal="4sp"/>
 
+
                 <TextView
-                    android:id="@+id/lblAgendamentoHora"
-                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/lblAgendamentoData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/agendamentoHoraDefault"
+                    android:text="@string/agendamentoDataDefault"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
             </LinearLayout>
 

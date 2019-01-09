@@ -29,6 +29,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/fragmentoPerfilClinica_nome"
                     android:inputType="textPersonName"
+                    android:text="Virgínia Baroni"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/nomePerfil"
@@ -52,6 +53,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/fragmentoPerfilClinica_email"
                     android:inputType="textEmailAddress"
+                    android:text="virg.baroni@gmail.com"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/emailPerfil"
@@ -75,6 +77,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/fragmentoPerfilClinica_morada"
                     android:inputType="textPostalAddress"
+                    android:text="Avenida Paulista, 1585, Apt. 45"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/moradaPerfil"
@@ -97,6 +100,7 @@
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/fragmentoPerfilClinica_nif"
+                    android:text="12345678-9"
                     android:inputType="number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -120,6 +124,7 @@
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/fragmentoPerfilClinica_fone"
+                    android:text="+55 11 945785482"
                     android:inputType="phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

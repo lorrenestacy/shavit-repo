@@ -1,6 +1,8 @@
 package com.example.lorreneogbonna.shavit.Model;
 
-public class Agendamento {
+import java.io.Serializable;
+
+public class Agendamento implements Serializable {
 
     private Pedido pedido;
     private Provedor provedor;

@@ -1,10 +1,12 @@
 package com.example.lorreneogbonna.shavit.views.fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -42,6 +44,7 @@ public class PedidosClinicaFragment extends Fragment {
     private PedidoAdapter pedidosAdapter;
     private RecyclerView listPedidos;
     private View view;
+    private SwipeRefreshLayout refresh;
 
     private PedidoApi pedidoApi;
 
@@ -56,6 +59,14 @@ public class PedidosClinicaFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_pedidos_clinica, container, false);
+
+        refresh = view.findViewById(R.id.pedidosClinica_refresh);
+        refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new PedidosClinicaFragment.LoadServicos().execute();
+            }
+        });
 
         pedidoApi = ApiClient.getClient().create(PedidoApi.class);
 
@@ -115,6 +126,8 @@ public class PedidosClinicaFragment extends Fragment {
             //notifying the adapter about the changes on the list
             pedidosAdapter.notifyItemRangeRemoved(0, listCurrentSize);
             pedidosAdapter.notifyItemRangeInserted(0, pedidos.size());
+
+            refresh.setRefreshing(false);
         }
 
     }

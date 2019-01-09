@@ -13,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.lorreneogbonna.shavit.Model.Servico;
 import com.example.lorreneogbonna.shavit.R;
@@ -62,8 +63,7 @@ public class ServicosListFragment extends Fragment {
         btnAddServico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentToNewServico = new Intent(getContext(),ServicoActivity.class);
-                startActivity(intentToNewServico);
+                Toast.makeText(getActivity(), "Adicionando novo serviço...", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -75,13 +75,15 @@ public class ServicosListFragment extends Fragment {
             public void onclick(View view, int position) {
 
                 Servico clickedServico = servicos.get(position);
-
-                Bundle extras = new Bundle();
-                extras.putSerializable(ServicoActivity.EXTRA_SERVICO_KEY, clickedServico);
-
-                Intent editServicoIntent = new Intent(getContext(), ServicoActivity.class);
-                editServicoIntent.putExtras(extras);
-                startActivity(editServicoIntent);
+                Toast.makeText(getActivity(), clickedServico.getNome(), Toast.LENGTH_SHORT).show();
+//
+//                Bundle extras = new Bundle();
+//                extras.putSerializable(ServicoActivity.EXTRA_SERVICO_KEY, clickedServico);
+//
+//                Intent editServicoIntent = new Intent(getContext(), ServicoActivity.class);
+//                editServicoIntent.putExtras(extras);
+//                startActivity(editServicoIntent);
+                
             }
         });
 
