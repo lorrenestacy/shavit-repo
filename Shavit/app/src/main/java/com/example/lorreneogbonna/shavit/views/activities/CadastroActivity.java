@@ -1,5 +1,7 @@
 package com.example.lorreneogbonna.shavit.views.activities;
 
+import android.arch.persistence.room.Room;
+import android.arch.persistence.room.RoomDatabase;
 import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
@@ -10,11 +12,22 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import com.example.lorreneogbonna.shavit.Controller.AppController;
+import com.example.lorreneogbonna.shavit.Controller.MyDatabase;
+import com.example.lorreneogbonna.shavit.Model.Cliente;
+import com.example.lorreneogbonna.shavit.Model.Clinica;
+import com.example.lorreneogbonna.shavit.MyDao;
 import com.example.lorreneogbonna.shavit.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CadastroActivity extends AppCompatActivity {
 
+
     int userType = 2;
+
+    public static MyDatabase myDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +35,10 @@ public class CadastroActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
+//        myDatabase = Room.databaseBuilder(getApplicationContext(), MyDatabase.class, "db").build();
+        myDatabase = Room.databaseBuilder(getApplicationContext(), MyDatabase.class, "db").allowMainThreadQueries().build();
+        List<Cliente> clientes = myDatabase.myDao().getallclientes();
+
 
         final TextInputEditText inputNome = findViewById(R.id.inputNome);
         final TextInputEditText inputEmail = findViewById(R.id.inputEmail);
@@ -70,9 +87,13 @@ public class CadastroActivity extends AppCompatActivity {
                         inputPassword.getText().toString().length() > 0){
 
                     if(userType==1) {
-                        idUser = appController.cadastrarClinica(nome, email, morada, telefone, nif, password);
 
                         if (idUser != -1) {//success
+                            idUser = appController.cadastrarClinica(nome, email, morada, telefone, nif, password);
+                            //adicionar no banco
+                            Clinica clinica = new Clinica(nome,  email,  morada,  telefone,  nif,  password);
+                            myDatabase.myDao().addClinica(clinica);
+
                             Intent intent = new Intent(CadastroActivity.this, HomeAgendamentoClinicaActivity.class);
                             intent.putExtra("nomeUsuario",nome);
                             intent.putExtra("emailUsuario",email);
@@ -86,6 +107,9 @@ public class CadastroActivity extends AppCompatActivity {
                     else{
                         int idade = Integer.parseInt(inputIdade.getText().toString());
                         idUser = appController.cadastrarCliente(nome, email, morada, telefone, nif, idade, password);
+                        //adicionar no banco
+                        Cliente cliente = new Cliente(nome, email,  idade,  morada,  telefone,  nif,  password );
+                        myDatabase.myDao().addCliente(cliente);
 
                         if(idUser != -1) {//success
                             Intent intent = new Intent(CadastroActivity.this, HomeBuscarClienteActivity.class);
@@ -116,6 +140,7 @@ public class CadastroActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
 }

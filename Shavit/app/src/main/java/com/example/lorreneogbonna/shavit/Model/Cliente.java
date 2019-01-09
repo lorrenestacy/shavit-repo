@@ -3,9 +3,22 @@ package com.example.lorreneogbonna.shavit.Model;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Embedded;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity(tableName = "clientes")
 public class Cliente extends Cadastro {
+    @Ignore
+    @Embedded
     List<Agendamento> agendamentos;
+    @Ignore
+    @Embedded
     List<Pedido> pedidos;
+    @Ignore
+    @ColumnInfo(name = "idade")
     int idade;
 
     public void setIdade(int idade) {

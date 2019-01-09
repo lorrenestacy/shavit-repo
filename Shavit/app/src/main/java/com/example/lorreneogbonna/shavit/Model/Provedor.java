@@ -3,10 +3,21 @@ package com.example.lorreneogbonna.shavit.Model;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Embedded;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity(tableName = "provedor")
 public class Provedor {
 
+    @PrimaryKey
+    private int id;
+    @ColumnInfo(name = "nome")
     private String nome;
+    @ColumnInfo(name = "telefone")
     private String telefone;
+    @Embedded
     private List<Servico> servicos;
 
     public Provedor (String nome, String telefone) {

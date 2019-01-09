@@ -3,10 +3,26 @@ package com.example.lorreneogbonna.shavit.Model;
 import java.util.ArrayList;
 import java.util.List;
 
+
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Embedded;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity(tableName = "clinicas")
 public class Clinica extends Cadastro {
+    @Ignore
+    @Embedded
     List<Pedido> pedidos;
+    @Ignore
+    @Embedded
     List<Agendamento> agendamentos;
+    @Ignore
+    @Embedded
     List<Servico> servicos;
+    @Ignore
+    @Embedded
     List<Provedor> provedores;
 
     public List<Pedido> getPedidos() {
@@ -48,4 +64,6 @@ public class Clinica extends Cadastro {
         this.provedores = new ArrayList<>();
         this.agendamentos = new ArrayList<>();
     }
+
+
 }

@@ -2,17 +2,54 @@ package com.example.lorreneogbonna.shavit.Model;
 
 import java.util.List;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Embedded;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+
+@Entity(tableName = "servico")
 public class Servico {
 
-    private String tipo;
-    private String nome;
-    private String descricao;
-    private double duracao;
-    private String observacao;
-    private double preco;
-    private String areaCorpo;
-    private Clinica clinica;
+    @PrimaryKey
+    private int idServico;
 
+    public int getId() {
+        return idServico;
+    }
+
+    @NonNull
+    @ColumnInfo(name = "tipo")
+    private String tipo;
+
+    @NonNull
+    @ColumnInfo(name = "nome")
+    private String nome;
+
+    @NonNull
+    @ColumnInfo(name = "descricao")
+    private String descricao;
+
+    @NonNull
+    @ColumnInfo(name = "duracao")
+    private double duracao;
+
+    @NonNull
+    @ColumnInfo(name = "observacao")
+    private String observacao;
+
+    @NonNull
+    @ColumnInfo(name = "preco")
+    private double preco;
+
+    @NonNull
+    @ColumnInfo(name = "areacorpo")
+    private String areaCorpo;
+
+    @NonNull
+    @ColumnInfo(name = "clinica")
+    private Clinica clinica;
+    @Embedded
     private List<Provedor> provedores;
 
     public Clinica getClinica() {

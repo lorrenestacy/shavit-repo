@@ -1,0 +1,53 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "4031dfa036ed0e40a6f21b368efe9982",
+    "entities": [
+      {
+        "tableName": "clinicas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idCadastro` INTEGER NOT NULL, PRIMARY KEY(`idCadastro`))",
+        "fields": [
+          {
+            "fieldPath": "idCadastro",
+            "columnName": "idCadastro",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idCadastro"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "clientes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idCadastro` INTEGER NOT NULL, PRIMARY KEY(`idCadastro`))",
+        "fields": [
+          {
+            "fieldPath": "idCadastro",
+            "columnName": "idCadastro",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idCadastro"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"4031dfa036ed0e40a6f21b368efe9982\")"
+    ]
+  }
+}

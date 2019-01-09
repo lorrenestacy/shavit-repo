@@ -26,6 +26,15 @@ public class AppController {
         clientes.add(cliente);
         return clientes.size() -1; //fazer retornar -1 pra uma falha no cadastro
     }
+
+    public int cadastrarCliente(final MyDatabase db, String nome,String email,String morada,String telefone,String nif, int idade, String password){
+        Cliente cliente = new Cliente(nome,  email,  idade,  morada,  telefone,  nif, password);
+        db.myDao().addCliente(cliente);
+
+//        clientes.add(cliente);
+        return 1; //fazer retornar -1 pra uma falha no cadastro
+    }
+
     public int cadastrarClinica(String nome,String email,String morada,String telefone,String nif, String password){
         Clinica clinica = new Clinica(nome,  email,  morada,  telefone,  nif, password);
         clinicas.add(clinica);

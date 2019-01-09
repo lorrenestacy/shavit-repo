@@ -1,8 +1,20 @@
 package com.example.lorreneogbonna.shavit.Model;
 
+
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
+@Entity(tableName = "promocao")
 public class Promocao {
+    @PrimaryKey
+    private int id;
+
+    @ColumnInfo(name = "clinica")
     Clinica clinica;
+    @ColumnInfo(name = "servico")
     Servico servico;
+    @ColumnInfo(name = "preco")
     String preco;
 
     public Clinica getClinica() {
