@@ -2,6 +2,7 @@ package com.example.lorreneogbonna.shavit.views.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -37,6 +38,21 @@ public class AgendamentoActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         agendamento = (Agendamento) intent.getSerializableExtra(AGENDAMENTO_KEY);
+
+        TextInputEditText txtNomeCliente = findViewById(R.id.activityAgendamento_txtCliente);
+        txtNomeCliente.setText(agendamento.getPedido().getCliente().getNome());
+
+        TextInputEditText txtProvedor = findViewById(R.id.activityAgendamento_txtProvedor);
+        txtProvedor.setText(agendamento.getProvedor().getNome());
+
+        TextInputEditText txtData = findViewById(R.id.activityAgendamento_txtData);
+        txtData.setText(agendamento.getPedido().getData());
+
+        TextInputEditText txtHorario = findViewById(R.id.activityAgendamento_txtHorario);
+        txtHorario.setText(agendamento.getPedido().getHorario());
+
+        TextInputEditText txtServico = findViewById(R.id.activityAgendamento_txtServico);
+        txtServico.setText(agendamento.getPedido().getServico().getNome());
 
         Button realizar = findViewById(R.id.activityAgendamento_realizado);
         realizar.setOnClickListener(new View.OnClickListener() {
