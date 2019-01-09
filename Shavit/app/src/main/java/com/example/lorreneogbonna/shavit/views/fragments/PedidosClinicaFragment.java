@@ -69,7 +69,11 @@ public class PedidosClinicaFragment extends Fragment {
 
                 Pedido clickedServico = pedidos.get(position);
 
+                Bundle extras = new Bundle();
+                extras.putSerializable(PedidoAvaliacaoActivity.PEDIDO_KEY, clickedServico);
+
                 Intent editServicoIntent = new Intent(getContext(), PedidoAvaliacaoActivity.class);
+                editServicoIntent.putExtras(extras);
                 startActivity(editServicoIntent);
             }
         });
@@ -94,7 +98,7 @@ public class PedidosClinicaFragment extends Fragment {
 
             } catch (IOException e) {
                 e.printStackTrace();
-                throw new RuntimeException("Error while trying to fetch Serviços");
+                return new ArrayList<>(); //error; returning empty array
             }
         }
 
@@ -111,8 +115,8 @@ public class PedidosClinicaFragment extends Fragment {
             //notifying the adapter about the changes on the list
             pedidosAdapter.notifyItemRangeRemoved(0, listCurrentSize);
             pedidosAdapter.notifyItemRangeInserted(0, pedidos.size());
-
         }
+
     }
 
     private List<Pedido> convertToEntities (List<PedidoDTO> dtos) {

@@ -13,6 +13,10 @@ public class Agendamento {
         this.provedor = null; //TODO for nwo
     }
 
+    public Agendamento () {
+
+    }
+
     public Pedido getPedido() {
         return pedido;
     }

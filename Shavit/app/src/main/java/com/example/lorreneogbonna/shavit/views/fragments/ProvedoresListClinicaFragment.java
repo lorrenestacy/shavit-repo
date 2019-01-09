@@ -17,18 +17,27 @@ import android.widget.Toast;
 
 import com.example.lorreneogbonna.shavit.Model.Provedor;
 import com.example.lorreneogbonna.shavit.R;
+import com.example.lorreneogbonna.shavit.apiconsuming.ApiClient;
+import com.example.lorreneogbonna.shavit.apiconsuming.dto.ProvedorDTO;
+import com.example.lorreneogbonna.shavit.apiconsuming.dto.ServicoDTO;
+import com.example.lorreneogbonna.shavit.apiconsuming.interfaces.ProvedorApi;
 import com.example.lorreneogbonna.shavit.views.activities.ServicoActivity;
 import com.example.lorreneogbonna.shavit.views.adapters.ProvedoresAdapter;
 import com.example.lorreneogbonna.shavit.views.utils.OnClickedItem;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
 
 public class ProvedoresListClinicaFragment extends Fragment {
 
     private List<Provedor> provedores;
     private ProvedoresAdapter provedoresAdapter;
     private RecyclerView rvListProvedores;
+
+    private ProvedorApi provedorApi;
 
     public ProvedoresListClinicaFragment() {
         provedores = new ArrayList<>();
@@ -38,6 +47,8 @@ public class ProvedoresListClinicaFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
+
+        provedorApi = ApiClient.getClient().create(ProvedorApi.class);
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_provedores_list, container, false);
@@ -79,14 +90,15 @@ public class ProvedoresListClinicaFragment extends Fragment {
         @Override
         protected List<Provedor> doInBackground(Void... voids) {
 
-            //TODO remove this when we get the database working
-            List<Provedor> fetchedProvedoresMock = new ArrayList<>();
-            fetchedProvedoresMock.add(new Provedor("Provedor 1", "+XXX YY ZZZ ZZZZ"));
-            fetchedProvedoresMock.add(new Provedor("Provedor 2", "+XXX YY ZZZ ZZZZ"));
-            fetchedProvedoresMock.add(new Provedor("Provedor 3", "+XXX YY ZZZ ZZZZ"));
-            fetchedProvedoresMock.add(new Provedor("Provedor 4", "+XXX YY ZZZ ZZZZ"));
+            Call<List<ProvedorDTO>> listServicoCall = provedorApi.listProvedores();
+            try {
+                List<ProvedorDTO> apiResult = listServicoCall.execute().body();
+                return convertToEntities(apiResult);
 
-            return fetchedProvedoresMock;
+            } catch (IOException e) {
+                e.printStackTrace();
+                return new ArrayList<>(); //error; returning empty array
+            }
         }
 
         @Override
@@ -104,5 +116,14 @@ public class ProvedoresListClinicaFragment extends Fragment {
             provedoresAdapter.notifyItemRangeInserted(0, provedores.size());
 
         }
+    }
+
+    private List<Provedor> convertToEntities (List<ProvedorDTO> dtos) {
+        List<Provedor> entities = new ArrayList<>();
+        for (ProvedorDTO dto : dtos) {
+            entities.add(dto.convertToEntity());
+        }
+
+        return entities;
     }
 }

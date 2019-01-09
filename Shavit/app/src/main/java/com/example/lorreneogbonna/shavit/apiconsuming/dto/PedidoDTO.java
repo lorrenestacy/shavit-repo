@@ -1,7 +1,9 @@
 package com.example.lorreneogbonna.shavit.apiconsuming.dto;
 
+import com.example.lorreneogbonna.shavit.Model.Agendamento;
 import com.example.lorreneogbonna.shavit.Model.Cliente;
 import com.example.lorreneogbonna.shavit.Model.Pedido;
+import com.example.lorreneogbonna.shavit.Model.Provedor;
 import com.example.lorreneogbonna.shavit.Model.Servico;
 
 public class PedidoDTO {
@@ -37,6 +39,15 @@ public class PedidoDTO {
         pedido.setHorario(this.hora);
 
         return pedido;
+    }
+
+    public Agendamento convertToAgendamento () {
+
+        Agendamento agendamento = new Agendamento();
+        agendamento.setPedido(this.convertToPedido());
+        agendamento.setProvedor(this.provedor.convertToEntity());
+
+        return agendamento;
     }
 
     public Long getId() {

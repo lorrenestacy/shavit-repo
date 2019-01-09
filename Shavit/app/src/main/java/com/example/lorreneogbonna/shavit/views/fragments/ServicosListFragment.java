@@ -105,7 +105,7 @@ public class ServicosListFragment extends Fragment {
 
             } catch (IOException e) {
                 e.printStackTrace();
-                throw new RuntimeException("Error while trying to fetch Serviços");
+                return new ArrayList<>(); //error; returning empty array
             }
         }
 

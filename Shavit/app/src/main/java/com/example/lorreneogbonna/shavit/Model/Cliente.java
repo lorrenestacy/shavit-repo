@@ -1,9 +1,10 @@
 package com.example.lorreneogbonna.shavit.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cliente extends Cadastro {
+public class Cliente extends Cadastro implements Serializable {
 
     List<Agendamento> agendamentos;
     List<Pedido> pedidos;

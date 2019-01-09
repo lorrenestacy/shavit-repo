@@ -1,6 +1,8 @@
 package com.example.lorreneogbonna.shavit.Model;
 
-public class Cadastro {
+import java.io.Serializable;
+
+public class Cadastro implements Serializable {
 
     private String nome;
     private String email; //colocar regez de validaçao
